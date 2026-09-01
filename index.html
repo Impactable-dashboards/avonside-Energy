@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Avonside Energy &middot; Intelligence Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --asphalt:#0A0A0C;--concrete:#15151A;--court:#22222A;--bone:#F4F1EA;--chalk:#D8D4C8;
+  --navy:#0D2D5E;--navy-deep:#071A38;--blue:#1B9BD1;--blue-soft:#5BB8E0;
+  --canopy:#D4FF3D;--moss:#7BAA3E;--terracotta:#C4521F;--hazard:#FF5A1F;--clay:#FFB627;--jet-pink:#FF2D7A;
+  --bg:var(--asphalt);--surface:var(--concrete);--line:var(--court);--ink:var(--bone);--muted:#9a9788;--card:#15151A;
+  --canopy-text:#D4FF3D;--moss-text:#8Fc24e;--clay-text:#FFB627;--blue-text:#5BB8E0;--terra-text:#E0794A;--pink-text:#FF6FA3;
+  --panel-deep:#071A38;--panel-mid:#0D2D5E;
+  --barcanopy:#D4FF3D;--barblue:#1B9BD1;--barterra:#C4521F;--barclay:#FFB627;--barmoss:#7BAA3E;--barpink:#FF2D7A;--barnavy:#0D2D5E;
+}
+[data-theme="light"]{
+  --bg:#F4F1EA;--surface:#FBFAF6;--line:#E0DCCF;--ink:#161512;--muted:#6b6659;--card:#FFFFFF;--chalk:#4a463c;
+  --canopy-text:#5C7200;--moss-text:#4a7a20;--clay-text:#b07800;--blue-text:#0f6a92;--terra-text:#9c3d13;--pink-text:#c01458;
+}
+.dark-panel{--canopy-text:#D4FF3D;--blue-text:#5BB8E0;--moss-text:#8FC24E;}
+.dark-panel .btn.ghost{border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.75)}
+.dark-panel .btn.ghost:hover{border-color:rgba(255,255,255,.6);color:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.55;font-size:15px;-webkit-font-smoothing:antialiased;transition:background .2s,color .2s}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:var(--blue-text);text-decoration:none}
+/* nav */
+nav.top{position:sticky;top:0;z-index:50;background:var(--panel-deep);border-bottom:1px solid rgba(255,255,255,.08)}
+nav.top .inner{max-width:1120px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-family:'JetBrains Mono';font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#F4F1EA;font-weight:700;white-space:nowrap}
+.brand .sep{color:rgba(216,212,200,.6);font-size:10px;font-weight:400;margin-left:8px;letter-spacing:.1em}
+.tabs{display:flex;gap:5px;flex-wrap:wrap;margin-left:6px}
+.tab{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(216,212,200,.72);background:none;border:1px solid transparent;padding:7px 11px;border-radius:7px;cursor:pointer;transition:all .16s;white-space:nowrap}
+.tab:hover{color:#fff;border-color:rgba(255,255,255,.18)}
+.tab.active{color:var(--asphalt);background:var(--canopy);font-weight:700}
+.navright{margin-left:auto;display:flex;align-items:center;gap:9px}
+.nav-cta{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:8px 13px;border-radius:7px;background:var(--blue);color:#04121f;white-space:nowrap}
+.themeBtn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#F4F1EA;width:32px;height:32px;border-radius:7px;cursor:pointer;font-size:14px}
+/* views */
+.view{display:none;animation:fade .25s ease}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+section.blk{padding:46px 0;border-bottom:1px solid var(--line)}
+section.blk:last-child{border-bottom:none}
+.secnum{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.24em;color:var(--pink-text);margin-bottom:11px}
+.kicker{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--pink-text);margin-bottom:14px}
+h1.big{font-family:'Archivo Black',sans-serif;font-size:clamp(32px,5.4vw,60px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase}
+h1.big em{color:var(--canopy-text);font-style:italic;display:inline-block;transform:skewX(-5deg)}
+h2.sec{font-family:'Archivo Black',sans-serif;font-size:clamp(24px,3.4vw,38px);line-height:1;letter-spacing:-.02em;text-transform:uppercase}
+h2.sec em{color:var(--canopy-text);font-style:italic}
+h3.sub{font-family:'Archivo Black',sans-serif;font-size:19px;text-transform:uppercase;letter-spacing:-.01em;margin:34px 0 12px}
+h3.sub em{color:var(--canopy-text);font-style:italic}
+.lede{max-width:800px;margin-top:16px;color:var(--chalk);font-size:16.5px}
+.sub{max-width:840px;margin-top:12px;color:var(--chalk)}
+p.body{max-width:840px;margin:12px 0;color:var(--ink)}
+.metastrip{display:flex;gap:24px;flex-wrap:wrap;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin-bottom:15px}
+.card.tl{border-left:4px solid var(--canopy)}.card.tb{border-left:4px solid var(--blue)}.card.tt{border-left:4px solid var(--terracotta)}.card.tc{border-left:4px solid var(--clay)}.card.tm{border-left:4px solid var(--moss)}
+.card h4{font-family:'Archivo Black';font-size:18px;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:5px}
+.card .role{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.chhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.chhead .clabel{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.chhead .ctitle{font-family:'Archivo Black';font-size:18px;text-transform:uppercase;letter-spacing:-.01em}
+.chhead .ctags{margin-left:auto;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:820px){.grid3,.grid4,.grid2{grid-template-columns:1fr}}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0}
+.tag{font-family:'JetBrains Mono';font-size:11.5px;background:rgba(0,0,0,.05);border:1px solid var(--line);color:var(--chalk);padding:4px 10px;border-radius:6px}
+[data-theme="dark"] .tag{background:rgba(255,255,255,.05)}
+.why{background:rgba(0,0,0,.04);border-left:3px solid var(--canopy);border-radius:0 8px 8px 0;padding:12px 15px;margin-top:13px;font-size:14px;color:var(--ink)}
+[data-theme="dark"] .why{background:rgba(212,255,61,.06)}
+.why b{color:var(--canopy-text)}
+.card.tt .why{border-left-color:var(--terracotta)}.card.tt .why b{color:var(--terra-text)}
+.card.tb .why{border-left-color:var(--blue)}.card.tb .why b{color:var(--blue-text)}
+.card.tc .why{border-left-color:var(--clay)}.card.tc .why b{color:var(--clay-text)}
+.card.tm .why{border-left-color:var(--moss)}.card.tm .why b{color:var(--moss-text)}
+.ev{font-size:13.5px;color:var(--muted);margin-top:10px}
+.ev b{color:var(--ink)}
+/* stat */
+.stat{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:16px 18px}
+.stat .n{font-family:'Archivo Black';font-size:30px;line-height:1;color:var(--canopy-text)}
+.stat .l{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+/* badges */
+.badge{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:20px;font-weight:700;white-space:nowrap;display:inline-block}
+.bh{background:rgba(123,170,62,.18);color:var(--moss-text)}
+.bm{background:rgba(255,182,39,.16);color:var(--clay-text)}
+.bl{background:rgba(154,151,136,.16);color:var(--muted)}
+[data-theme="light"] .bh{color:#39601a}[data-theme="light"] .bm{color:#6b4a00}[data-theme="light"] .bl{color:#565143}
+.bstart{background:var(--canopy);color:var(--asphalt)}
+.bbuild{background:rgba(27,155,209,.18);color:var(--blue-text)}
+.blater{background:rgba(154,151,136,.16);color:var(--muted)}
+.pill{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:rgba(0,0,0,.05);border:1px solid var(--line);color:var(--chalk)}
+[data-theme="dark"] .pill{background:rgba(255,255,255,.05)}
+/* callout */
+.callout{background:rgba(0,0,0,.03);border:1px solid var(--line);border-left:3px solid var(--canopy);border-radius:12px;padding:22px 24px;margin:24px 0}
+[data-theme="dark"] .callout{background:linear-gradient(135deg,rgba(212,255,61,.07),rgba(27,155,209,.05))}
+.callout.blue{border-left-color:var(--blue)}.callout.clay{border-left-color:var(--clay)}.callout.terra{border-left-color:var(--terracotta)}
+.callout .k{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--canopy-text);margin-bottom:9px}
+.callout.blue .k{color:var(--blue-text)}.callout.clay .k{color:var(--clay-text)}.callout.terra .k{color:var(--terra-text)}
+.callout p{color:var(--ink);font-size:14.5px}.callout b{color:var(--ink)}
+/* tables */
+.tbl{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px}
+.tbl th{text-align:left;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line)}
+.tbl td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--chalk)}
+.tbl td.k{color:var(--ink);font-weight:600}
+.scroll{overflow-x:auto}
+@media(max-width:760px){.scroll .tbl,.scroll .kw{min-width:640px}}
+/* filter table */
+.ftable{width:100%;border-collapse:collapse;margin-top:10px}
+.ftable td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13.5px}
+.ftable td.lbl{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);width:180px}
+.ftable td.val{color:var(--ink)}
+.ftable tr:last-child td{border-bottom:none}
+/* keyword */
+.kw{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px}
+.kw th{text-align:left;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line)}
+.kw td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--chalk)}
+.kw td.term{color:var(--ink);font-family:'JetBrains Mono';font-size:12px}
+/* tierlabel */
+.tierlabel{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:30px 0 14px;font-weight:700}
+.tierlabel .d{width:11px;height:11px;border-radius:50%}
+.tw .d{background:var(--canopy)}.tw{color:var(--canopy-text)}
+.tabm .d{background:var(--blue)}.tabm{color:var(--blue-text)}
+.tcold .d{background:var(--terracotta)}.tcold{color:var(--terra-text)}
+/* figures */
+figure{margin:26px 0}
+.fig{width:100%;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:22px}
+.figscroll{overflow-x:auto}
+@media(max-width:700px){.figscroll svg{min-width:600px}}
+svg{width:100%;height:auto;display:block}
+figcaption{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.03em;color:var(--muted);margin-top:12px;line-height:1.5}
+.svglabel{font-family:'JetBrains Mono';font-size:11px;fill:var(--ink)}
+.svgmuted{font-family:'JetBrains Mono';font-size:10px;fill:var(--muted)}
+.svgnum{font-family:'Archivo Black';fill:var(--ink)}
+/* details/disclosure */
+details{margin:12px 0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--card)}
+summary{list-style:none;cursor:pointer;padding:12px 16px;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.03)}
+[data-theme="dark"] summary{background:rgba(255,255,255,.04)}
+summary::-webkit-details-marker{display:none}
+summary .chip{font-weight:700;color:var(--canopy-text);border:1px solid var(--line);border-radius:5px;padding:0 7px;font-size:13px}
+details[open] summary .chip{color:var(--terra-text)}
+details[open] summary .verb{display:none}
+.dbody{padding:6px 16px 14px}
+/* clean list */
+ul.clean{list-style:none;margin:10px 0}
+ul.clean li{position:relative;padding-left:22px;margin:7px 0;color:var(--ink)}
+ul.clean li::before{content:'▸';position:absolute;left:0;color:var(--canopy-text)}
+/* buttons */
+.btn{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:14px 22px;border-radius:8px;display:inline-block;transition:transform .15s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--canopy);color:var(--asphalt)}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--ink)}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+/* move cards (overview) */
+.move{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;cursor:pointer;transition:border-color .15s,transform .15s;display:block}
+.move:hover{border-color:var(--canopy);transform:translateY(-2px)}
+.move .mn{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;color:var(--pink-text);margin-bottom:8px}
+.move .mt{font-family:'Archivo Black';font-size:16px;text-transform:uppercase;margin-bottom:6px}
+.move .md{font-size:13.5px;color:var(--chalk)}
+.move .arrow{font-family:'JetBrains Mono';font-size:11px;color:var(--canopy-text);margin-top:10px;letter-spacing:.06em}
+/* pricing matrix */
+.pm{width:100%;border-collapse:separate;border-spacing:0;margin-top:18px;font-size:13px}
+.pm th,.pm td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+.pm .rowlbl{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);width:180px}
+.pm .ohead{font-family:'Archivo Black';font-size:16px;text-transform:uppercase}
+.pm .price{font-family:'Archivo Black';font-size:22px;color:var(--canopy-text)}
+.pm .per{font-family:'JetBrains Mono';font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pm td.rec{background:var(--panel-deep);color:#F4F1EA}
+.pm td.rec .ohead{color:#fff}
+.pm td.rec .price{color:#D4FF3D}
+.pm td.rec .per{color:rgba(216,212,200,.7)}
+.pm .rectint{background:rgba(13,45,94,.06)}
+[data-theme="dark"] .pm .rectint{background:rgba(91,184,224,.08)}
+.recpill{font-family:'JetBrains Mono';font-size:9px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;background:var(--canopy);color:var(--asphalt);padding:3px 8px;border-radius:20px;display:inline-block;margin-bottom:8px}
+.ck{color:var(--moss-text);font-weight:700}
+.cx{color:var(--muted)}
+.cp{color:var(--clay-text);font-weight:700}
+td.rec .ck{color:#8FC24E}td.rec .cp{color:#FFB627}td.rec .cx{color:rgba(216,212,200,.55)}
+.freebar{background:rgba(0,0,0,.03);border:1px solid var(--line);border-left:3px solid var(--moss);border-radius:10px;padding:14px 18px;margin-top:16px;font-size:13.5px;color:var(--ink)}
+[data-theme="dark"] .freebar{background:rgba(123,170,62,.08)}
+/* CTA */
+.ctablock{background:var(--panel-deep);border-radius:16px;padding:40px 36px;margin-top:30px;text-align:center}
+.ctablock h2{font-family:'Archivo Black';font-size:clamp(24px,3.4vw,36px);text-transform:uppercase;color:#F4F1EA;line-height:1.02}
+.ctablock h2 em{color:#D4FF3D;font-style:italic}
+.ctablock p{color:rgba(216,212,200,.85);max-width:600px;margin:14px auto 0;font-size:15px}
+.ctablock .btnrow{justify-content:center}
+/* footer */
+.foot{padding:30px 0 60px}
+.foot .fb{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:700}
+.foot .note{color:var(--muted);font-size:11.5px;margin-top:12px;max-width:860px;line-height:1.6}
+.hl{color:var(--canopy-text)}
+</style>
+<style>
+/* ADDITIVE: targeting-only visuals (uniquely named). Canonical block above is byte-identical and untouched. */
+.funnel{margin:20px 0 4px}
+.fband{margin:0 auto 6px;border-radius:10px;padding:13px 18px;text-align:center}
+.fband .fscope{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:700}
+.fband.b1{width:100%;background:var(--clay)}
+.fband.b2{width:70%;background:var(--blue)}
+.fband.b3{width:44%;background:var(--canopy)}
+.fband.b1 .fscope,.fband.b3 .fscope{color:#0A0A0C}
+.fband.b2 .fscope{color:#04121f}
+.fdesc{max-width:760px;margin:2px auto 14px;text-align:center;font-size:13.5px;color:var(--muted)}
+.rung{margin:6px 0;padding:12px 0;border-bottom:1px solid var(--line)}
+.rhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:9px}
+.rhead .rn{font-family:'Archivo Black';font-size:16px;color:var(--muted)}
+.rhead .rnm{font-family:'Archivo Black';font-size:15px;text-transform:uppercase;letter-spacing:-.01em}
+.rhead .rc{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-left:auto}
+.rbarwrap{background:rgba(0,0,0,.05);border-radius:8px;overflow:hidden}
+[data-theme="dark"] .rbarwrap{background:rgba(255,255,255,.05)}
+.rbar{height:26px;border-radius:8px;display:flex;align-items:center;padding-left:12px;font-family:'JetBrains Mono';font-size:10.5px;font-weight:700}
+.rbar.r1{width:22%;background:var(--canopy);color:#0A0A0C}
+.rbar.r2{width:38%;background:var(--moss);color:#0A0A0C}
+.rbar.r3{width:56%;background:var(--blue);color:#04121f}
+.rbar.r4{width:76%;background:var(--clay);color:#0A0A0C}
+.rbar.r5{width:96%;background:var(--terracotta);color:#fff}
+.rex{font-size:12.5px;color:var(--ink);margin-top:8px;max-width:820px}
+.reach{margin-top:12px}
+.reach .rlbl{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.pill.pri{background:rgba(212,255,61,.16);border-color:var(--canopy);color:#3f6a1c}
+[data-theme="dark"] .pill.pri{color:#D4FF3D}
+.pill.sec{background:rgba(27,155,209,.14);border-color:var(--blue);color:#0f6a92}
+[data-theme="dark"] .pill.sec{color:#5BB8E0}
+.pill.obj{background:rgba(196,82,31,.12);border-color:var(--terracotta);color:#9c3d13}
+[data-theme="dark"] .pill.obj{color:#E0794A}
+.tradeoff{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.tpanel{border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.tpanel.up{background:rgba(123,170,62,.08);border-left:4px solid var(--moss)}
+.tpanel.catch{background:rgba(255,90,31,.08);border-left:4px solid var(--hazard)}
+[data-theme="dark"] .tpanel.up{background:rgba(123,170,62,.12)}
+[data-theme="dark"] .tpanel.catch{background:rgba(255,90,31,.12)}
+.tpanel .th{font-family:'Archivo Black';font-size:15px;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:8px}
+.tpanel.up .th{color:#3a631a}
+[data-theme="dark"] .tpanel.up .th{color:#8FC24E}
+.tpanel.catch .th{color:#b23410}
+[data-theme="dark"] .tpanel.catch .th{color:#FF7A47}
+.ichip{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:20px;font-weight:700;border:1px solid transparent;display:inline-block;margin-right:6px}
+.ichip.hi{background:rgba(196,82,31,.12);color:#9c3d13;border-color:rgba(196,82,31,.3)}
+[data-theme="dark"] .ichip.hi{color:#E0794A}
+.ichip.md{background:rgba(255,182,39,.16);color:#7a5200;border-color:rgba(255,182,39,.35)}
+[data-theme="dark"] .ichip.md{color:#FFB627}
+.ichip.lo{background:rgba(123,170,62,.16);color:#3a631a;border-color:rgba(123,170,62,.35)}
+[data-theme="dark"] .ichip.lo{color:#8FC24E}
+@media(max-width:700px){.tradeoff{grid-template-columns:1fr}.fband.b2{width:84%}.fband.b3{width:66%}}
+
+/* ROOM ADDITIVE: ecosystem board, coverage waterfall, video, fit grid */
+.board{margin:18px 0}
+.pillrow{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.plabel{flex:0 0 180px;min-width:150px}
+.plabel .pn{font-family:'Archivo Black';font-size:15px;text-transform:uppercase;letter-spacing:-.01em}
+.plabel .pj{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.3}
+.pmotions{display:flex;gap:8px;flex-wrap:wrap;flex:1 1 480px}
+.mchip{border:1px solid var(--line);border-radius:9px;padding:9px 11px;background:var(--card);min-width:150px;flex:0 1 auto}
+.mchip .mid{font-family:'JetBrains Mono';font-size:9.5px;color:var(--muted);letter-spacing:.05em}
+.mchip .mname{font-size:12.5px;color:var(--ink);margin:3px 0 7px;line-height:1.25}
+.mchip .mmeta{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.owner{font-family:'JetBrains Mono';font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:1px 6px}
+.phase{display:inline-flex;gap:3px}
+.phase i{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.14);display:inline-block}
+[data-theme="dark"] .phase i{background:rgba(255,255,255,.18)}
+.phase i.on{background:var(--moss)}
+.pillrow.create .pn{color:var(--canopy-text)}
+.pillrow.capture .pn{color:var(--terra-text)}
+.pillrow.connect .pn{color:var(--blue-text)}
+.pillrow.convert .pn{color:var(--moss-text)}
+.pillrow.compound .pn{color:var(--clay-text)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.vid{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin:16px 0}
+.vid iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.fitgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.move{display:block;border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--card);text-decoration:none;transition:border-color .15s,transform .15s}
+.move:hover{border-color:var(--canopy);transform:translateY(-2px)}
+.move .mvk{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.move .mvt{font-family:'Archivo Black';font-size:16px;text-transform:uppercase;letter-spacing:-.01em;margin:6px 0;color:var(--ink)}
+.move .mvd{font-size:13.5px;color:var(--ink);line-height:1.5}
+.move .mvgo{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--canopy-text);margin-top:9px;display:inline-block}
+@media(max-width:700px){.fitgrid{grid-template-columns:1fr}.plabel{flex-basis:100%}}
+/* pricing matrix: pin accents inside the always-dark recommended column so they stay legible in light mode */
+.pm td.rec .ck{color:#8FC24E}
+.pm td.rec .cx{color:rgba(216,212,200,.6)}
+/* general green tick darker on light cells to clear AA on the bone background */
+[data-theme="light"] .ck{color:#3a631a}
+</style>
+</head>
+<body>
+<!-- ============================================================
+RECOMMENDATION VARIABLES  (single source of truth, Hard Rule 22)
+  THESIS: Two businesses, one funnel; only Commercial & Industrial is marketing-movable.
+          Capture what is searching, qualify it on LinkedIn, create the rest with content, then scale the qualified pool.
+  ENTRY MOTION: In-market search capture + Insight Tag + LinkedIn qualify-and-retarget (capture-led; no warm pools yet).
+  RECOMMENDED OPTION: Option 2 "Capture, Qualify and Create" (adds the content-engine foundation). ~from $5,000/mo approx (live-anchored, confirm on call).
+  STARTING MOTIONS: Google capture (C5/C6/C7), LinkedIn retargeting (C8), tracking/Insight Tag (C11), matched landing pages (C18); content engine (C1/C2/C4) as Build.
+  GOOGLE'S ROLE: capture + conquest LEAD lane (day-one, real in-market search + no warm pools), feeds retargeting pools. Not the demand engine.
+  CHANNEL ORDER: Capture + Insight Tag -> Connect (LinkedIn qualify/retarget/ABM) -> Create (content) -> Extend (Meta/programmatic) -> Activate (outreach).
+  PRICING: live from impactable.com/pricing (fetched this session); marked approx, confirmed on call; fee separate from ad spend; $1,500 setup; 90-day horizon.
+  ADDITIVE CSS: second <style> block carries targeting (funnel/ladder/tradeoff/chips) + room (board/waterfall/video/fit-grid) classes. Keep with assembler.
+============================================================ -->
+<nav class="top dark-panel">
+  <div class="inner">
+    <div class="brand">IMPACTABLE<span class="sep">// Intelligence Room</span></div>
+    <div class="tabs">
+      <button class="tab active" data-v="overview">Overview</button>
+      <button class="tab" data-v="whitespace">White Space</button>
+      <button class="tab" data-v="targeting">Targeting</button>
+      <button class="tab" data-v="ecosystem">Ecosystem</button>
+      <button class="tab" data-v="howitworks">How It Works</button>
+      <button class="tab" data-v="paths">Paths Forward</button>
+    </div>
+    <div class="navright">
+      <a class="nav-cta" href="https://landbot.online/v3/H-2201411-ZNNL8EM9RF7C2XAC/index.html" target="_blank" rel="noopener">Book a call</a>
+      <button class="themeBtn" id="themeBtn" aria-label="Toggle theme">&#9728;</button>
+    </div>
+  </div>
+</nav>
+<div class="wrap">
+
+<section class="view active" id="overview">
+  <section class="blk">
+    <div class="kicker">Prepared for Avonside Energy &middot; Commercial and Industrial Solar</div>
+    <h1 class="big">Capture what is searching.<br><em>Qualify it. Then create the rest.</em></h1>
+    <p class="lede">Avonside runs two operations through one funnel. New-build work is won at the housebuilder framework level, where a demand engine has little leverage. The Commercial and Industrial side is the part a system moves, and it already holds proof most rivals would envy. The move is not a new channel. It is a sequence: capture the in-market search that already exists, qualify it on LinkedIn before spending further, and build a content engine to create the demand that is not searching yet, then scale the qualified pool as it fills.</p>
+    <div class="btnrow" style="margin-top:22px">
+      <a class="btn primary" href="https://landbot.online/v3/H-2201411-ZNNL8EM9RF7C2XAC/index.html" target="_blank" rel="noopener">Book a strategy call</a>
+      <a class="btn ghost" href="#whitespace" data-goto="whitespace">See the open ground</a>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h2 class="sec">Five moves, <em>in order</em></h2>
+    <div class="fitgrid">
+      <a class="move" href="#whitespace" data-goto="whitespace">
+        <div class="mvk">Move 01 &middot; White Space</div>
+        <div class="mvt">Own the open ground</div>
+        <div class="mvd">The whole field competes on savings and payback, so differentiation has collapsed to price. The open ground is delivery certainty at scale, safety and operational continuity, and honest numbers, all backed by proof the single-site majority cannot match.</div>
+        <span class="mvgo">See the white space &rarr;</span>
+      </a>
+      <a class="move" href="#targeting" data-goto="targeting">
+        <div class="mvk">Move 02 &middot; Targeting</div>
+        <div class="mvt">Aim at the estate buyer</div>
+        <div class="mvd">Multi-site and energy-intensive buyers: the estate and finance decision-makers who sign the capital case and own the sites. Reached on search, qualified on LinkedIn, and sharpened with signals.</div>
+        <span class="mvgo">See the audience &rarr;</span>
+      </a>
+      <a class="move" href="#ecosystem" data-goto="ecosystem">
+        <div class="mvk">Move 03 &middot; Ecosystem</div>
+        <div class="mvt">Stand up the hub, capture first</div>
+        <div class="mvd">There are no warm pools to retarget yet, so the first move is the Insight Tag plus Google capturing the in-market demand already searching. That is the day-one lead lane, and it fills the pools everything else runs on.</div>
+        <span class="mvgo">See the system &rarr;</span>
+      </a>
+      <a class="move" href="#howitworks" data-goto="howitworks">
+        <div class="mvk">Move 04 &middot; How It Works</div>
+        <div class="mvt">Qualify, then create</div>
+        <div class="mvd">LinkedIn filters that traffic firmographically before further spend, the only channel that does. A content engine creates the demand that is not searching yet, the fix for a thin organic footprint, and feeds the same funnel.</div>
+        <span class="mvgo">See how we run it &rarr;</span>
+      </a>
+      <a class="move" href="#paths" data-goto="paths">
+        <div class="mvk">Move 05 &middot; Paths Forward</div>
+        <div class="mvt">Start small, earn expansion</div>
+        <div class="mvd">One capture-and-qualify motion first, with the content foundation added, and the full account-based and air-cover system earned once the first layers prove out. Aim small, then scale what works.</div>
+        <span class="mvgo">See the paths &rarr;</span>
+      </a>
+    </div>
+  </section>
+</section>
+
+<section class="view" id="whitespace">
+  <section class="blk">
+    <div class="secnum">WHITE SPACE &nbsp;&middot;&nbsp; AVONSIDE ENERGY</div>
+    <h2 class="sec">What everyone says, <em>and what nobody owns</em></h2>
+    <p class="sub">Ten direct competitors in United Kingdom commercial and industrial solar, read from their own sites, reviews and company records. This is one of the most saturated messaging markets in the category. Every firm makes the same promise, so differentiation has collapsed to price and to whichever quote-comparison service reaches the buyer first. The opportunity is not a sharper version of the same claim. It is the ground the whole field leaves open.</p>
+    <div class="grid4" style="margin-top:22px">
+      <div class="stat"><div class="n">10</div><div class="l">Direct rivals, one message</div></div>
+      <div class="stat"><div class="n">5</div><div class="l">Identical headline claims</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">Axis they all compete on</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Lanes Avonside can own</div></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">The messaging is <em>a commodity war</em></h3>
+    <p class="body">Nearly every headline claim in the category is shared by most of the field. The longer the bar, the more crowded the claim, and the less it can separate anyone. Leading with any of these is a race Avonside wins only on price, which is not where its advantages sit.</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 380" role="img" aria-label="Message saturation by theme">
+          <g class="svglabel">
+            <text x="0" y="30">Cut energy bills 30 to 50 percent</text><rect x="330" y="18" width="420" height="18" rx="4" fill="#C4521F"/><text x="760" y="32" class="svgmuted" text-anchor="start">EXTREME</text>
+            <text x="0" y="78">Payback in 3 to 8 years</text><rect x="330" y="66" width="420" height="18" rx="4" fill="#C4521F"/><text x="760" y="80" class="svgmuted" text-anchor="start">EXTREME</text>
+            <text x="0" y="126">Net zero and carbon reduction</text><rect x="330" y="114" width="420" height="18" rx="4" fill="#C4521F"/><text x="760" y="128" class="svgmuted" text-anchor="start">EXTREME</text>
+            <text x="0" y="174">Financing (PPA, asset finance)</text><rect x="330" y="162" width="340" height="18" rx="4" fill="#FFB627"/><text x="680" y="176" class="svgmuted" text-anchor="start">HIGH</text>
+            <text x="0" y="222">Tier 1 panels, 25 year warranty</text><rect x="330" y="210" width="340" height="18" rx="4" fill="#FFB627"/><text x="680" y="224" class="svgmuted" text-anchor="start">HIGH</text>
+            <text x="0" y="270">Bespoke and tailored to you</text><rect x="330" y="258" width="320" height="18" rx="4" fill="#FFB627"/><text x="660" y="272" class="svgmuted" text-anchor="start">HIGH</text>
+            <text x="0" y="318">Awards and accreditations</text><rect x="330" y="306" width="260" height="18" rx="4" fill="#7BAA3E"/><text x="600" y="320" class="svgmuted" text-anchor="start">MEDIUM</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Saturation read from the ten competitor sites. Every extreme and high bar is table stakes, so competing on it is a race to the bottom on price, where the younger entrants deliberately sit.</figcaption>
+    </figure>
+    <details>
+      <summary><span class="chip">+</span><span class="verb">Show </span>who says each claim, in full</summary>
+      <div class="dbody">
+        <div class="scroll"><table class="tbl">
+          <thead><tr><th>Saturated theme</th><th>Who says it</th><th>Why it fails to separate anyone</th></tr></thead>
+          <tbody>
+            <tr><td class="k">Cut energy bills 30 to 50 percent</td><td>Every competitor in the set</td><td>Universal. It defines the category, so it cannot distinguish anyone within it.</td></tr>
+            <tr><td class="k">Payback in 3 to 8 years</td><td>MyPower, Path Energy, Geo Green Power, Spirit Energy, most</td><td>The same range repeated everywhere. Buyers discount it on sight.</td></tr>
+            <tr><td class="k">Net zero and carbon reduction</td><td>All ten</td><td>Assumed by the buyer. Owned by no one because everyone claims it.</td></tr>
+            <tr><td class="k">Financing flexibility (Power Purchase Agreement, asset finance)</td><td>Harvest Green, EvoEnergy, Geo Green Power, Solar4Good, most</td><td>Table stakes, and the Power Purchase Agreement pitch is now openly contested by Path Energy.</td></tr>
+            <tr><td class="k">Tier 1 panels and 25 year warranty</td><td>Path Energy, Geo Green Power, MyPower, most</td><td>Hardware hygiene, not an edge. Every serious installer offers it.</td></tr>
+            <tr><td class="k">Bespoke and tailored to your business</td><td>Nearly all</td><td>A claim with no proof attached. It reassures without differentiating.</td></tr>
+            <tr><td class="k">Awards and accreditations</td><td>Solarsense, Harvest Green, Emtec Energy, Joju</td><td>Helpful for trust, but shared widely enough that it rarely decides a deal.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+  </section>
+  <section class="blk">
+    <h3 class="sub">The field, <em>ten deep</em></h3>
+    <p class="body">Ranked with the three named comparables first, then the seven established national players Avonside meets on larger, multi-site and mid-market projects. A layer of supplier-neutral comparison services sits above the installers and intercepts high-intent buyers, which is itself proof that the category carries real in-market search.</p>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>#</th><th>Competitor</th><th>Positioning in one line</th><th>Scale and proof</th><th>Primary marketing motion</th></tr></thead>
+      <tbody>
+        <tr><td class="k">1</td><td class="k">MyPower</td><td>Award-winning commercial and agricultural installer, savings led.</td><td>Since 2010, Gloucestershire. National press including a BBC feature.</td><td>Content and public relations mature.</td></tr>
+        <tr><td class="k">2</td><td class="k">Harvest Green</td><td>B Corp renewables specialist, finance and Power Purchase Agreement led.</td><td>Devon. Solar, storage, electric vehicle charging.</td><td>Sustainability and funding narrative.</td></tr>
+        <tr><td class="k">3</td><td class="k">Path Energy</td><td>Speed to saving, with an openly anti Power Purchase Agreement stance.</td><td>Leeds, founded 2022. Small proof base (about 8 reviews).</td><td>Heavy programmatic search pages.</td></tr>
+        <tr><td class="k">4</td><td class="k">Solarsense</td><td>Established, employee-owned B Corp serving blue-chip estates.</td><td>Founded 1995. 15,000 to 20,000 plus installs. Lidl, RSPB.</td><td>Awards and heritage credibility.</td></tr>
+        <tr><td class="k">5</td><td class="k">EvoEnergy</td><td>Turnkey solar, storage and electric vehicle for blue-chip corporates.</td><td>Founded 2007. DPD 1 megawatt rooftop. 46 staff.</td><td>Corporate case studies.</td></tr>
+        <tr><td class="k">6</td><td class="k">Geo Green Power</td><td>Strategic energy partner for factories, logistics and rural estates.</td><td>Trading since 2010. Multi-megawatt systems, MCS and RECC.</td><td>Deep search and content operation.</td></tr>
+        <tr><td class="k">7</td><td class="k">Emtec Energy</td><td>One of the largest solar contractors in the country.</td><td>Emtec Group, founded 2011. Contractor of the Year 2024.</td><td>Award-led, contractor and developer channels.</td></tr>
+        <tr><td class="k">8</td><td class="k">Absolute Solar &amp; Wind</td><td>Major commercial rooftop and solar-farm contractor.</td><td>Part of the RSK Group. Agricultural, industrial, public.</td><td>Group-backed, project and tender led.</td></tr>
+        <tr><td class="k">9</td><td class="k">Spirit Energy</td><td>Solar-plus-storage specialist, South East focus.</td><td>Berkshire, founded 2010. Thousands of installs.</td><td>Regional search, small and mid business.</td></tr>
+        <tr><td class="k">10</td><td class="k">Solar4Good</td><td>Finance and tax-consultancy-led commercial solar.</td><td>Harrow. 750 plus five-star reviews. Best Solar Installer 2026.</td><td>Reviews, listicles and strong content.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="body" style="font-size:14px;color:var(--muted)">Also in the field, not scored here: Joju Solar (public sector and schools specialist), SAS Energy (an EDF Renewables subsidiary), Custom Solar, Shawton Energy (Power Purchase Agreement, Lazard-backed), BeBa Energy and Low Carbon Energy Company.</p>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">Profiles: <em>the three named, plus two scale benchmarks</em></h3>
+
+    <div class="card" style="border-left:4px solid var(--terracotta)">
+      <div class="chhead"><span class="clabel" style="color:var(--terra-text)">NAMED 01</span><span class="ctitle">MyPower</span></div>
+      <p class="body" style="margin-top:0">Commercially driven solar for commercial, industrial and agricultural organisations. Leads on savings, resilience and price certainty, generating 30 to 40 percent of a site's electricity on-site.</p>
+      <div class="ev"><b>Differentiators:</b> since 2010, award-winning, and the most content and public relations mature in the set, including a national BBC feature.</div>
+      <div class="ev"><b>Proof and target:</b> named installs and active social. Serves small manufacturing through multi-site cold-store portfolios.</div>
+      <div class="ev"><b>Where it is exposed:</b> mid-sized delivery scale relative to Avonside, and savings messaging that overlaps the whole field.</div>
+      <div class="why"><b>Strategic take:</b> the marketing-maturity benchmark and the firm that sets the demand-creation bar. Avonside holds larger, more quantified proof but has not matched MyPower's distribution.</div>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--moss)">
+      <div class="chhead"><span class="clabel" style="color:var(--moss-text)">NAMED 02</span><span class="ctitle">Harvest Green Developments</span></div>
+      <p class="body" style="margin-top:0">Certified B Corp renewables specialist. Solar, battery storage and electric vehicle charging, pitched through funding. The hook is a no-upfront-cost Power Purchase Agreement at roughly 40 percent below market price.</p>
+      <div class="ev"><b>Differentiators:</b> B Corp credentials and funding flexibility (Power Purchase Agreement, asset finance, capital purchase).</div>
+      <div class="ev"><b>Proof and target:</b> references to large companies, sustainability guides. Commercial, industrial and public sector.</div>
+      <div class="ev"><b>Where it is exposed:</b> narrower scale, and a Power Purchase Agreement-forward pitch that Path Energy now publicly argues favours the installer over the business.</div>
+      <div class="why"><b>Strategic take:</b> sharply positioned on posture rather than throughput. Vulnerable if a larger firm pairs honest funding guidance with genuine delivery scale.</div>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--clay)">
+      <div class="chhead"><span class="clabel" style="color:var(--clay-text)">NAMED 03</span><span class="ctitle">Path Energy</span></div>
+      <p class="body" style="margin-top:0">High-performance commercial solar and battery storage for business, built around energy independence and return on investment. The signature hook is speed to saving, with installation typically beginning within 2 to 3 weeks of grid approval.</p>
+      <div class="ev"><b>Differentiators:</b> install speed, an energy-optimisation and smart-tariff wrap, and a contrarian stance that Power Purchase Agreements enrich the installer, not the business.</div>
+      <div class="ev"><b>Proof and target:</b> a small review base (about 8 reviews), heavy search pages. Warehouses, data centres, retail parks, public sector.</div>
+      <div class="ev"><b>Where it is exposed:</b> founded 2022, with a thin track record on high-value or multi-site work.</div>
+      <div class="why"><b>Strategic take:</b> the clearest case of positioning outrunning proof. Smart angles, but the thin references show on a large tender. The most vulnerable of the three on scale and trust.</div>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <div class="chhead"><span class="clabel" style="color:var(--blue-text)">BENCHMARK 01</span><span class="ctitle">Solarsense</span></div>
+      <p class="body" style="margin-top:0">A leading, long-established renewable energy contractor and employee-owned B Corp, leaning on decades of delivery and blue-chip estates.</p>
+      <div class="ev"><b>Differentiators:</b> founded 1995, 15,000 to 20,000 plus installs, more than 20 national awards, named blue-chip clients (Lidl, RSPB), 34 gigawatt hours generated for clients.</div>
+      <div class="ev"><b>Where it is exposed:</b> split commercial and residential focus, and positioning that leans on heritage rather than a sharp buyer promise.</div>
+      <div class="why"><b>Strategic take:</b> a genuine scale benchmark and the most credible on longevity. Where Avonside meets it, the contest is proof against proof, so Avonside's multi-site and safety story has to be sharper than a general heritage claim.</div>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <div class="chhead"><span class="clabel" style="color:var(--blue-text)">BENCHMARK 02</span><span class="ctitle">EvoEnergy</span></div>
+      <p class="body" style="margin-top:0">Turnkey solar, battery and electric vehicle projects with Power Purchase Agreement financing for blue-chip corporates.</p>
+      <div class="ev"><b>Differentiators:</b> founded 2007 out of the University of Nottingham, named corporate delivery (a 1 megawatt DPD rooftop), 46 staff, national reach.</div>
+      <div class="ev"><b>Where it is exposed:</b> a mid-sized team, and a corporate and Power Purchase Agreement framing shared with several rivals.</div>
+      <div class="why"><b>Strategic take:</b> the clearest blue-chip and Power Purchase Agreement comparable. Competes on named logos and funded delivery, exactly the ground Avonside can contest with DFDS-scale, multi-site proof and a stronger safety record.</div>
+    </div>
+  </section>
+  <section class="blk">
+    <h3 class="sub">Where the field crowds, <em>and where the ground is open</em></h3>
+    <p class="body">Two axes tell the structural story. Left to right: the message a firm competes on, from the crowded savings-and-price axis to the open ground of delivery certainty, safety and honesty. Bottom to top: delivery scale and proof. The whole field clusters on the left. Avonside already sits high on scale, so it can move right into ground no one is defending.</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 460" role="img" aria-label="Competitor positioning map">
+          <rect x="470" y="40" width="410" height="180" rx="8" fill="#D4FF3D" opacity="0.10"/>
+          <text x="675" y="70" class="svglabel" text-anchor="middle" font-family="Archivo Black" font-size="13" fill="#5C7200">OPEN GROUND</text>
+          <line x1="70" y1="410" x2="880" y2="410" stroke="var(--line)" stroke-width="1.5"/>
+          <line x1="70" y1="40" x2="70" y2="410" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="475" y="446" class="svgmuted" text-anchor="middle">Message axis: savings and price (crowded) &#8594; delivery certainty, safety, honesty (open)</text>
+          <text x="34" y="230" class="svgmuted" text-anchor="middle" transform="rotate(-90 34 230)">Scale and proof: emerging &#8594; established</text>
+          <!-- competitors clustered on the left (price axis) across scale -->
+          <circle cx="180" cy="360" r="7" fill="#C4521F"/><text x="192" y="364" class="svglabel">Path Energy</text>
+          <circle cx="250" cy="300" r="7" fill="#C4521F"/><text x="262" y="304" class="svglabel">Spirit Energy</text>
+          <circle cx="230" cy="250" r="7" fill="#C4521F"/><text x="242" y="254" class="svglabel">Harvest Green</text>
+          <circle cx="300" cy="205" r="7" fill="#C4521F"/><text x="312" y="209" class="svglabel">MyPower</text>
+          <circle cx="320" cy="150" r="7" fill="#C4521F"/><text x="332" y="154" class="svglabel">Geo Green Power</text>
+          <circle cx="360" cy="120" r="7" fill="#C4521F"/><text x="372" y="124" class="svglabel">EvoEnergy</text>
+          <circle cx="300" cy="95" r="7" fill="#C4521F"/><text x="312" y="99" class="svglabel">Solarsense</text>
+          <circle cx="380" cy="80" r="7" fill="#C4521F"/><text x="392" y="84" class="svglabel">Emtec Energy</text>
+          <!-- Avonside in the open ground -->
+          <circle cx="700" cy="120" r="11" fill="#D4FF3D" stroke="#5C7200" stroke-width="2"/>
+          <text x="718" y="118" class="svglabel" font-family="Archivo Black" font-size="13" fill="#5C7200">AVONSIDE</text>
+          <text x="718" y="135" class="svgmuted">the scale it already has</text>
+        </svg>
+      </div>
+      <figcaption>Positions are read from each firm's own messaging, not a performance ranking. The dots cluster on the savings axis at every scale level. The upper-right quadrant, high scale paired with an off-price message, is unclaimed.</figcaption>
+    </figure>
+  </section>
+
+  <section class="blk">
+    <h2 class="sec">The lanes <em>Avonside can own</em></h2>
+    <p class="sub">Each lane stands on what Avonside already does, maps to a specific buyer, and cites real proof. None of them require hiring anyone to be true. The market shape underneath is a fragmented field competing on one identical axis, which collapses to price. These lanes sit off that axis.</p>
+
+    <div class="card tl">
+      <div class="chhead"><span class="clabel" style="color:var(--canopy-text)">LANE 01</span><span class="ctitle">Delivery certainty at portfolio scale</span></div>
+      <p class="body" style="margin-top:0">The field is built of single-site installers pitching a savings calculator. Almost nobody speaks to the multi-site buyer's real fear, which is whether one partner can coordinate a rollout across an entire estate, on time, without disrupting operations.</p>
+      <div class="ev"><b>Why it matters:</b> for a national logistics, retail or manufacturing group the savings case is assumed. The decision hinges on delivery risk across many sites, which the calculator-led pitch ignores.</div>
+      <div class="ev"><b>The buyer:</b> group or estate facilities and operations leads, and group sustainability leads, at multi-site businesses.</div>
+      <div class="ev"><b>Evidence Avonside can stand on:</b> 50,000 panels installed a year, more than 100 staff across 10 branches, a new-build operation servicing 600 plus live sites, and the DFDS rollout across four sites. Real throughput the single-site majority cannot match.</div>
+      <div class="why"><b>Opportunity size:</b> high. Speaks to the buyer's real fear and reframes away from the price war entirely.</div>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <div class="chhead"><span class="clabel" style="color:var(--blue-text)">LANE 02</span><span class="ctitle">Safety and operational continuity</span></div>
+      <p class="body" style="margin-top:0">Competitors treat safety and disruption as fine print. For an energy-intensive site the genuine risk is an install that halts production or causes an incident, not the savings arithmetic.</p>
+      <div class="ev"><b>Why it matters:</b> for cold storage, round-the-clock manufacturing, and food and drink production, downtime and safety failures dwarf the cost of the panels. Nobody is making that the headline.</div>
+      <div class="ev"><b>The buyer:</b> operations and facilities directors at continuous-operation sites, and heads of health, safety and compliance.</div>
+      <div class="ev"><b>Evidence Avonside can stand on:</b> zero reportable safety incidents in the last year (RIDDOR), accreditation depth (CHAS, SMAS, CQMS, MCS, NAPIT), and a stated practice of installing with minimal disruption. Few competitors lead here because few have a record this clean to show.</div>
+      <div class="why"><b>Opportunity size:</b> high. A buying criterion the whole field leaves on the table.</div>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--clay)">
+      <div class="chhead"><span class="clabel" style="color:var(--clay-text)">LANE 03</span><span class="ctitle">Conservative, honest modelling</span></div>
+      <p class="body" style="margin-top:0">Everyone models the best case. Nobody makes honesty about the numbers the promise. This lane is contested at the edges, since Path Energy runs an anti Power Purchase Agreement honesty angle and Solar4Good leans on delivering what it promises, so it is ground to sharpen and own rather than an empty field.</p>
+      <div class="ev"><b>Why it matters:</b> finance buyers have learned to distrust inflated solar projections. A firm that under-promises and beats the estimate wins the room the optimists have already lost.</div>
+      <div class="ev"><b>The buyer:</b> finance directors and financial controllers who sign the capital case.</div>
+      <div class="ev"><b>Evidence Avonside can stand on:</b> existing site language of deliberately conservative savings figures the client may well exceed, and generation modelled within 2 percent accuracy. A real posture, under-used as positioning.</div>
+      <div class="why"><b>Opportunity size:</b> medium to high. Directly answers the objection the category's own best-case pitch creates.</div>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--moss)">
+      <div class="chhead"><span class="clabel" style="color:var(--moss-text)">LANE 04</span><span class="ctitle">The dual-division bridge, new build to occupier</span></div>
+      <p class="body" style="margin-top:0">No competitor in the set installs both new-build renewables for housebuilders and commercial solar for occupiers. Nobody offers one partner across both.</p>
+      <div class="ev"><b>Why it matters:</b> developers, housing associations and build-to-rent operators need new-build solar and insulation and, separately, estate or commercial solar. One accountable partner across both is a position only Avonside can hold.</div>
+      <div class="ev"><b>The buyer:</b> sustainability and development leads at housebuilders, housing associations and build-to-rent operators.</div>
+      <div class="ev"><b>Evidence Avonside can stand on:</b> the dual-division model itself, plus named housebuilder relationships. Structurally unique to Avonside in this field.</div>
+      <div class="why"><b>Opportunity size:</b> medium. A narrower buyer set, but uncontested.</div>
+    </div>
+
+    <div class="callout">
+      <div class="k">The frontier, and why it is not Avonside's white space today</div>
+      <p class="body" style="margin:0">The largest single gap in this market is that nobody connects their marketing to pipeline or systematically catches the in-market buyer. No installer in this set filters its site traffic by firmographics, retargets the demand it earns, or ties influenced revenue back to campaigns. That is the market frontier, and Avonside sits inside it alongside everyone else rather than ahead of it. It belongs in the growth plan as the direction that needs a system, not here as an advantage Avonside already holds. Naming it honestly is what keeps the four lanes above clean: each is something Avonside can own today on its own proof, without a single new tool.</p>
+    </div>
+  </section>
+  <section class="blk">
+    <h2 class="sec">The position, <em>and how to say it</em></h2>
+    <div class="callout">
+      <div class="k">Positioning direction, built from the white space</div>
+      <p style="font-size:16px;margin:0"><b>The commercial solar partner that delivers multi-site rollouts at national scale without stopping your operation or inflating the numbers, backed by a business that installs 50,000 panels a year and a spotless safety record.</b></p>
+    </div>
+    <div class="grid2">
+      <div class="card tt">
+        <h4 style="font-size:15px;margin:0 0 4px">Messaging to dial back</h4>
+        <ul class="clean" style="margin-top:6px">
+          <li>Generic savings percentages as the headline. Every rival makes the same claim.</li>
+          <li>Payback in under four years as the lead. Table stakes, not a difference.</li>
+          <li>Net zero and sustainability as the primary pitch. Assumed by the buyer, owned by no one.</li>
+          <li>Tier 1 panels and 25-year warranty as a selling point. Hygiene, not an edge.</li>
+        </ul>
+      </div>
+      <div class="card tl">
+        <h4 style="font-size:15px;margin:0 0 4px">True differentiators, ownable</h4>
+        <ul class="clean" style="margin-top:6px">
+          <li>Portfolio and multi-site delivery, evidenced by the DFDS four-site rollout and 50,000 panels a year.</li>
+          <li>A clean safety record and accreditation depth, credible on live, continuous-operation sites.</li>
+          <li>Conservative modelling within 2 percent accuracy, against a market of best-case projections.</li>
+          <li>The dual-division bridge, the only partner spanning new-build and occupier solar.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">Messaging hooks <em>by buying stage</em></h3>
+    <p class="body">Crisp phrases for adverts, headlines and sales conversations. Each frames the problem or the proof in a way the saturated field does not.</p>
+    <div class="grid3">
+      <div class="card" style="border-left:4px solid var(--terracotta)">
+        <div class="clabel" style="color:var(--terra-text)">UNAWARE &middot; FRAME THE PROBLEM</div>
+        <ul class="clean" style="margin-top:10px">
+          <li>Your energy bill is not the risk. An install that stops your operation is.</li>
+          <li>Most solar quotes model the best case. What happens when the numbers do not hold.</li>
+          <li>One site is a project. Twelve sites is a programme. They are not the same thing.</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left:4px solid var(--blue)">
+        <div class="clabel" style="color:var(--blue-text)">AWARE &middot; DIFFERENTIATE</div>
+        <ul class="clean" style="margin-top:10px">
+          <li>Portfolio rollout, one partner, zero disruption.</li>
+          <li>Conservative modelling. You will likely beat the estimate.</li>
+          <li>The safety record to install on a live, round-the-clock site.</li>
+        </ul>
+      </div>
+      <div class="card tl">
+        <div class="clabel" style="color:var(--canopy-text)">ENGAGED &middot; CONVERT</div>
+        <ul class="clean" style="margin-top:10px">
+          <li>See the DFDS rollout: four sites, 372,000 pounds saved in year one.</li>
+          <li>Free feasibility, modelled within 2 percent accuracy, no email required.</li>
+          <li>25-year guarantee, spotless safety record, blue-chip references on request.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">The takeaways</h3>
+    <ul class="clean">
+      <li>The whole field competes on the same handful of claims, so those are table stakes and a losing position. Differentiation has collapsed to price and to whoever reaches the buyer first.</li>
+      <li>Avonside's ownable ground sits off that axis: delivery certainty at scale, safety and operational continuity, and conservative honesty on the numbers, each backed by proof the single-site majority cannot match.</li>
+      <li>The single biggest lane is multi-site and portfolio delivery certainty, tied to the new-build operation and the DFDS multi-site rollout.</li>
+      <li>A layer of supplier-neutral comparison services is intercepting high-intent search. That confirms real in-market demand and points to Google as a genuine capture lane, not a thin niche.</li>
+      <li>Connecting marketing to pipeline and catching the in-market buyer is the market frontier. Nobody in this field does it, Avonside included, so it is the growth direction that needs a system, not a claim to make today.</li>
+      <li>Most vulnerable rivals: Path Energy on trust and scale, and the finance-led Power Purchase Agreement players if Avonside sharpens the honest-numbers angle.</li>
+      <li>The clearest single move: reposition the commercial story around multi-site delivery certainty and conservative honesty, aim it at estate, operations and finance buyers, and build the engine to put that proof in front of them.</li>
+    </ul>
+    <details>
+      <summary><span class="chip">+</span><span class="verb">Show </span>sources and method</summary>
+      <div class="dbody">
+        <p class="body" style="font-size:13.5px;margin:8px 0"><b>Sources.</b> Public company websites, Companies House, industry directories and press. No account access was used.</p>
+        <p class="body" style="font-size:13.5px;margin:8px 0"><b>Search demand.</b> The category sustains a full layer of comparison sites and quote-matching services competing for commercial solar terms, strong evidence of genuine in-market search. A keyword pull would quantify volume and the brand versus non-brand split.</p>
+        <p class="body" style="font-size:13.5px;margin:8px 0"><b>Competitor paid presence.</b> Automated advert-library checks returned no usable data and the control advertiser returned the same empty result, so the method failed rather than the finding. A manual advertiser-scoped check is the next step. Content and search are visibly the dominant marketing motion in this field.</p>
+        <p class="body" style="font-size:13.5px;margin:8px 0"><b>Vertical claims.</b> Verticals owned by specialists were not assigned to Avonside. Public sector and schools skew to Joju, and agricultural solar is contested. Avonside's sector story is framed as range across logistics, manufacturing, research, healthcare and emergency services, not a single-vertical claim.</p>
+      </div>
+    </details>
+  </section>
+</section>
+
+<section class="view" id="targeting">
+  <section class="blk">
+    <div class="secnum">TARGETING &nbsp;&middot;&nbsp; AVONSIDE ENERGY</div>
+    <h2 class="sec">Who to target, <em>and how to reach them cheaply</em></h2>
+    <p class="sub">This worksheet moves from who Avonside can serve, to the priority buyer, to the cheapest way to reach them, the attributes LinkedIn actually allows, the named plays, the search groups, and the signals that build the account list. It targets the Commercial and Industrial division. Starting point: the site runs Google Tag Manager and analytics but no LinkedIn Insight Tag, no customer relationship management (CRM) tag and no visitor identification, so there are no warm advertising pools to retarget on day one. The plan reflects that.</p>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">The market <em>they can serve</em></h3>
+    <p class="body">Figures are third-party estimates that vary by source. The point is directional: a large, fast-growing market where the commercial segment outpaces residential, on a fragmented installer base with no clear leader.</p>
+    <div class="grid4" style="margin-top:14px">
+      <div class="stat"><div class="n">~22 GW</div><div class="l">UK solar capacity, 2026</div></div>
+      <div class="stat"><div class="n">~$10B</div><div class="l">UK market 2025, 9-11% a year</div></div>
+      <div class="stat"><div class="n">30-35%</div><div class="l">Commercial share of rooftop, rising</div></div>
+      <div class="stat"><div class="n">No.1</div><div class="l">Category owner: none, field is fragmented</div></div>
+    </div>
+    <p class="body" style="font-size:13.5px;color:var(--muted)">Avonside's own footprint, roughly 50,000 panels a year, is a small slice of this. The constraint reads as aim, not ceiling. Demand is now led by energy-price pressure, with net zero important but secondary, which points the message at the finance buyer.</p>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">Narrowing to <em>the priority customer</em></h3>
+    <div class="funnel">
+      <div class="fband b1"><div class="fscope">Serviceable market</div></div>
+      <div class="fdesc">UK businesses with suitable roof or land and meaningful electricity spend. The whole field competes here.</div>
+      <div class="fband b2"><div class="fscope">Priority customer</div></div>
+      <div class="fdesc">Energy-intensive, multi-site or large-footprint UK companies in logistics, warehousing, manufacturing, cold storage, food production and retail estates, from roughly 201 employees up.</div>
+      <div class="fband b3"><div class="fscope">Beachhead</div></div>
+      <div class="fdesc">Multi-site operators and continuous-operation sites where one coordinated rollout across the estate is the deciding factor. The buyer the delivery-certainty position speaks to directly.</div>
+    </div>
+    <p class="body" style="font-size:13px;color:var(--muted);text-align:center">Each band is a subset of the one above it, not a separate audience.</p>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">The buying committee</h3>
+    <p class="body">Four roles matter for a capital purchase. The gatekeeper is not an advertising audience, so it is answered with a message, not a filter.</p>
+    <div class="grid2">
+      <div class="card tl">
+        <div class="chhead"><span class="ctitle" style="font-size:16px">Finance Director / CFO</span><span class="pill pri" style="margin-left:auto">Primary target</span></div>
+        <p class="body" style="margin:6px 0;font-size:13.5px">The economic buyer. Cares about the capital case, payback reliability, and cash-flow options (capital purchase, lease, Power Purchase Agreement).</p>
+        <div class="reach"><div class="rlbl">How we reach them</div><div class="tags"><span class="tag">Seniority CXO, VP, Director</span><span class="tag">Finance function</span><span class="tag">201+ energy-intensive</span><span class="tag">Message: beat the estimate</span></div></div>
+      </div>
+      <div class="card tb">
+        <div class="chhead"><span class="ctitle" style="font-size:16px">Operations / Facilities Director</span><span class="pill pri" style="margin-left:auto">Primary target</span></div>
+        <p class="body" style="margin:6px 0;font-size:13.5px">The champion. Cares about continuity, minimal disruption, multi-site coordination and safety.</p>
+        <div class="reach"><div class="rlbl">How we reach them</div><div class="tags"><span class="tag">Operations function</span><span class="tag">Facilities Director, Head of Estates</span><span class="tag">Skills: Facilities, Energy Management</span></div></div>
+      </div>
+      <div class="card tm">
+        <div class="chhead"><span class="ctitle" style="font-size:16px">Sustainability / ESG lead</span><span class="pill sec" style="margin-left:auto">Secondary</span></div>
+        <p class="body" style="margin:6px 0;font-size:13.5px">The influencer. Cares about net zero, carbon reporting and export tariffs. Carries the case internally.</p>
+        <div class="reach"><div class="rlbl">How we reach them</div><div class="tags"><span class="tag">Function + skills, not a title</span><span class="tag">Skills: Sustainability, ESG</span><span class="tag">Message-qualified</span></div></div>
+      </div>
+      <div class="card tt">
+        <div class="chhead"><span class="ctitle" style="font-size:16px">Incumbent installer / procurement</span><span class="pill obj" style="margin-left:auto">Objection to answer</span></div>
+        <p class="body" style="margin:6px 0;font-size:13.5px">The gatekeeper: an existing quote or the prior installer. Not an advertising audience.</p>
+        <div class="reach"><div class="rlbl">Answered with a message, not a filter</div><div class="tags"><span class="tag">Multi-site delivery proof</span><span class="tag">Clean safety record</span><span class="tag">Honest modelling</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="blk">
+    <h2 class="sec">The audience <em>efficiency ladder</em></h2>
+    <p class="sub">Cheapest audiences run first, cold earns budget last. A wider bar means a higher cost per lead. Because there are no warm advertising pools yet, the top two rungs are empty on day one and fill as tracking stands up, so phase one leans on in-market search and a tight LinkedIn qualify-and-retarget layer.</p>
+    <div class="ladder">
+      <div class="rung">
+        <div class="rhead"><span class="rn">1</span><span class="rnm">Warm first-party, bottom of funnel</span><span class="rc">75 to 150 pounds &middot; runs first</span></div>
+        <div class="rbarwrap"><div class="rbar r1">cheapest</div></div>
+        <div class="rex">Runs first once pools exist. Today: none. Fills with calculator leads, consultation bookings, and CRM records once the CRM is connected.</div>
+      </div>
+      <div class="rung">
+        <div class="rhead"><span class="rn">2</span><span class="rnm">Warm first-party, mid funnel</span><span class="rc">120 to 250 pounds</span></div>
+        <div class="rbarwrap"><div class="rbar r2">low</div></div>
+        <div class="rex">Today: none. Fills with site visitors, content engagers, and the search and organic traffic already hitting the site, once the Insight Tag is live.</div>
+      </div>
+      <div class="rung">
+        <div class="rhead"><span class="rn">3</span><span class="rnm">In-market search capture</span><span class="rc">feeds the pools &middot; primary in phase one</span></div>
+        <div class="rbarwrap"><div class="rbar r3">the day-one lead lane</div></div>
+        <div class="rex">Buyers already searching commercial solar terms on Google and Bing. With no warm pools yet, this is the day-one lead lane, not just capture.</div>
+      </div>
+      <div class="rung">
+        <div class="rhead"><span class="rn">4</span><span class="rnm">Account-based, the workhorse</span><span class="rc">250 to 400 pounds</span></div>
+        <div class="rbarwrap"><div class="rbar r4">mid</div></div>
+        <div class="rex">A named list of energy-intensive, multi-site UK accounts built with fit, intent and timing signals, person-filtered to the committee, uploaded as a Matched Audience.</div>
+      </div>
+      <div class="rung">
+        <div class="rhead"><span class="rn">5</span><span class="rnm">Cold LinkedIn, native filters</span><span class="rc">300 to 600+ pounds &middot; last</span></div>
+        <div class="rbarwrap"><div class="rbar r5">most expensive</div></div>
+        <div class="rex">Broad committee titles and seniority at energy-intensive UK companies. Longer cycle, more budget, runs only after the rungs above prove out.</div>
+      </div>
+    </div>
+    <div class="why"><b>Budget shape, no warm pools yet:</b> phase one is capture-led, in-market search plus a tight LinkedIn qualify-and-retarget layer and a small native cold test, shifting toward warm as the Insight Tag, Website Visitor Identification and form pools fill. Management fee is separate from advertising spend. Bands are indicative, not a forecast.</div>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">How the motion works</h3>
+    <p class="body">LinkedIn is the only channel that filters site traffic firmographically before spend, which is why warm converts cheapest and cold runs last. Today the first job is to stand up the Insight Tag so this loop can begin.</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 300" role="img" aria-label="How the motion works">
+          <g class="svglabel">
+            <rect x="10" y="120" width="150" height="60" rx="8" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+            <text x="85" y="145" text-anchor="middle">Earned and</text><text x="85" y="162" text-anchor="middle">search traffic</text>
+            <line x1="160" y1="150" x2="205" y2="150" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar)"/>
+            <rect x="210" y="120" width="150" height="60" rx="8" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+            <text x="285" y="154" text-anchor="middle">The site</text>
+            <line x1="360" y1="150" x2="405" y2="150" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar)"/>
+            <rect x="410" y="110" width="180" height="80" rx="8" fill="#1B9BD1" opacity="0.12" stroke="#1B9BD1" stroke-width="1.5"/>
+            <text x="500" y="140" text-anchor="middle" fill="#0f6a92" font-family="Archivo Black" font-size="12">LinkedIn</text>
+            <text x="500" y="158" text-anchor="middle" font-size="11">qualifies by firmographics,</text>
+            <text x="500" y="173" text-anchor="middle" font-size="11">then converts</text>
+            <line x1="590" y1="150" x2="635" y2="150" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar)"/>
+            <rect x="640" y="110" width="200" height="80" rx="8" fill="#D4FF3D" opacity="0.14" stroke="#7BAA3E" stroke-width="1.5"/>
+            <text x="740" y="136" text-anchor="middle" fill="#5C7200" font-family="Archivo Black" font-size="12">Signals</text>
+            <text x="740" y="154" text-anchor="middle" font-size="11">named accounts, hidden</text>
+            <text x="740" y="169" text-anchor="middle" font-size="11">pipeline, retargeting pools</text>
+            <path d="M740 190 C 740 240, 285 240, 285 182" fill="none" stroke="#7BAA3E" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+            <text x="512" y="235" text-anchor="middle" class="svgmuted">feedback loop: signals refill the pools</text>
+          </g>
+          <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--muted)"/></marker></defs>
+        </svg>
+      </div>
+      <figcaption>The compounding point: warm leads and cold runs last because LinkedIn filters the traffic the other channels pay for. The loop starts the moment the Insight Tag is live.</figcaption>
+    </figure>
+  </section>
+  <section class="blk">
+    <h2 class="sec">LinkedIn <em>targeting attributes</em></h2>
+    <p class="sub">LinkedIn Campaign Manager targets official, curated taxonomies, not free-text keywords. Buyer situations that matter here, a multi-site rollout plan, an energy-contract renewal, a recent price shock, are not attributes. They are reached by the ad message and self-selection, or proxied by a third-party signal, never by a native filter.</p>
+    <div style="margin-top:14px">
+      <div class="tierlabel" style="color:var(--canopy-text)">Member Job Titles (standardized)</div>
+      <div class="tags"><span class="tag">Chief Financial Officer</span><span class="tag">Finance Director</span><span class="tag">Chief Operating Officer</span><span class="tag">Operations Director</span><span class="tag">Facilities Director</span><span class="tag">Head of Estates</span><span class="tag">Energy Manager</span><span class="tag">Head of Sustainability</span><span class="tag">Managing Director</span></div>
+      <div class="tierlabel" style="color:var(--blue-text)">Job Seniorities</div>
+      <div class="tags"><span class="tag">Owner</span><span class="tag">CXO</span><span class="tag">VP</span><span class="tag">Director</span><span class="tag">Manager</span></div>
+      <div class="tierlabel" style="color:var(--blue-text)">Job Functions</div>
+      <div class="tags"><span class="tag">Operations</span><span class="tag">Finance</span><span class="tag">Purchasing</span><span class="tag">Real Estate</span><span class="tag">Program and Project Management</span></div>
+      <div class="tierlabel" style="color:var(--terra-text)">Industries (LinkedIn V2 names)</div>
+      <div class="tags"><span class="tag">Manufacturing</span><span class="tag">Food and Beverage Manufacturing</span><span class="tag">Truck Transportation</span><span class="tag">Warehousing and Storage</span><span class="tag">Freight and Package Transportation</span><span class="tag">Retail</span><span class="tag">Wholesale</span><span class="tag">Utilities</span><span class="tag">Farming</span></div>
+      <div class="tierlabel" style="color:var(--clay-text)">Company Size</div>
+      <div class="tags"><span class="tag">201-500</span><span class="tag">501-1,000</span><span class="tag">1,001-5,000</span><span class="tag">5,001-10,000</span><span class="tag">10,001+</span><span class="tag">51-200 (expansion, single sites)</span></div>
+      <div class="tierlabel" style="color:var(--moss-text)">Member Skills</div>
+      <div class="tags"><span class="tag">Facilities Management</span><span class="tag">Energy Management</span><span class="tag">Sustainability</span><span class="tag">Corporate Social Responsibility</span><span class="tag">Carbon Reduction</span><span class="tag">Net Zero</span><span class="tag">ESG</span></div>
+      <div class="tierlabel" style="color:var(--muted)">Location and Exclusions</div>
+      <div class="tags"><span class="tag">United Kingdom</span><span class="tag">Exclude: existing customers</span><span class="tag">Exclude: employees</span><span class="tag">Exclude: competitor installers</span><span class="tag">Exclude: students, job seekers</span></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h2 class="sec">The priority <em>segments</em></h2>
+    <p class="sub">Two to three named plays assembled from the palette. The first is buildable today with no third-party data and is the launch play. The others layer on as signals and tracking fill. Every size is an estimate to confirm in-platform.</p>
+
+    <div class="card tl">
+      <div class="chhead"><span class="clabel" style="color:var(--canopy-text)">SEGMENT 01</span><span class="ctitle">Estate and finance decision-makers</span><span class="ctags">LinkedIn native, launch now</span></div>
+      <p class="body" style="margin-top:2px">The economic buyer and the champion together: the people who sign the capital case and own the sites. Buildable on day one with no third-party data.</p>
+      <table class="ftable"><tbody>
+        <tr><td class="k" style="width:34%">Seniority</td><td>Owner, CXO, VP, Director</td></tr>
+        <tr><td class="k">Function</td><td>Operations, Finance</td></tr>
+        <tr><td class="k">Industries</td><td>Manufacturing, Food and Beverage Manufacturing, Truck Transportation, Warehousing and Storage, Freight and Package Transportation, Retail, Wholesale</td></tr>
+        <tr><td class="k">Company size</td><td>201-500, 501-1,000, 1,001-5,000, 5,001-10,000, 10,001+</td></tr>
+        <tr><td class="k">Skills</td><td>Facilities Management, Energy Management</td></tr>
+        <tr><td class="k">Defaults</td><td>Audience Expansion OFF, Audience Network OFF. Suppress customers, employees, competitors, students.</td></tr>
+        <tr><td class="k">Estimated size</td><td>Inferred 40,000 to 70,000. Confirm by sizing in-platform.</td></tr>
+      </tbody></table>
+      <div class="why"><b>Why chase it:</b> the delivery-certainty and finance-buyer lane, the beachhead audience, and the one play that needs no new tooling to launch.</div>
+    </div>
+
+    <div class="card tb">
+      <div class="chhead"><span class="clabel" style="color:var(--blue-text)">SEGMENT 02</span><span class="ctitle">In-market energy accounts</span><span class="ctags">LinkedIn + signals, expansion</span></div>
+      <p class="body" style="margin-top:2px">The Segment 01 fit profile, narrowed to accounts showing a live signal. The expansion play that prioritizes accounts already leaning in.</p>
+      <table class="ftable"><tbody>
+        <tr><td class="k" style="width:34%">Base</td><td>Segment 01 fit profile</td></tr>
+        <tr><td class="k">Signal layer</td><td>Commercial-solar and energy-management intent (Bombora), Website Visitor Identification, organic engagers (Trigify), hiring signals for energy or facilities roles</td></tr>
+        <tr><td class="k">Delivery</td><td>Built in enrichment, uploaded as a Matched Audience, person-filtered to the committee</td></tr>
+        <tr><td class="k">Estimated size</td><td>Signal-dependent. Estimate after build.</td></tr>
+      </tbody></table>
+      <div class="why"><b>Why chase it:</b> the bridge to the account-based rung and the outreach hand-off. It is where the signal layer earns its keep.</div>
+    </div>
+
+    <div class="card tm">
+      <div class="chhead"><span class="clabel" style="color:var(--moss-text)">SEGMENT 03</span><span class="ctitle">Sustainability and ESG leads</span><span class="ctags">LinkedIn native, secondary</span></div>
+      <p class="body" style="margin-top:2px">The influencer who carries the carbon and net-zero case internally. Reached by function and skills, since sustainability lead is not a clean standardized title.</p>
+      <table class="ftable"><tbody>
+        <tr><td class="k" style="width:34%">Reached by</td><td>Function: Operations, Program and Project Management. Skills: Sustainability, ESG, Carbon Reduction, Net Zero.</td></tr>
+        <tr><td class="k">Seniority</td><td>Director, Manager</td></tr>
+        <tr><td class="k">Company size</td><td>501-1,000, 1,001-5,000, 5,001-10,000, 10,001+</td></tr>
+        <tr><td class="k">Estimated size</td><td>Inferred smaller. If it builds under about 25,000, run it inside the account-based structure rather than broadening filters.</td></tr>
+      </tbody></table>
+      <div class="why"><b>Why chase it:</b> supports the economic buyer with the carbon case, and sharpens the account-based list around live ESG intent.</div>
+    </div>
+  </section>
+  <section class="blk">
+    <h2 class="sec">Paid-search <em>core groups</em></h2>
+    <p class="sub">Search is a real lane here, and with no warm pools yet it is the day-one lead lane, not just capture. It is not free money. Both sides are true at once.</p>
+    <div class="tradeoff">
+      <div class="tpanel up">
+        <div class="th">Why this lane is worth it</div>
+        <p class="body" style="margin:0;font-size:13.5px">Clear intent: the searcher has already decided they want commercial solar, so there is no demand to create. A shorter sales cycle than any cold audience. Self-qualifying queries that name the product.</p>
+      </div>
+      <div class="tpanel catch">
+        <div class="th">The catch</div>
+        <p class="body" style="margin:0;font-size:13.5px">Highly competitive: national installers and comparison sites bid the head terms up hard. Clicks are among the priciest in business-to-business. And the landing page, not the click, decides the return.</p>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:6px">
+      <div class="card tt"><div class="chhead"><span class="ctitle" style="font-size:15px">Category capture</span><span style="margin-left:auto"><span class="ichip hi">intent high</span><span class="ichip hi">cost high</span></span></div><div class="tags"><span class="tag">commercial solar panels</span><span class="tag">commercial solar installers</span><span class="tag">solar for business</span><span class="tag">industrial solar UK</span></div></div>
+      <div class="card tm"><div class="chhead"><span class="ctitle" style="font-size:15px">Method / differentiator</span><span style="margin-left:auto"><span class="ichip hi">intent high</span><span class="ichip lo">cost low</span></span></div><div class="tags"><span class="tag">multi-site solar rollout</span><span class="tag">solar for warehouses</span><span class="tag">solar for cold storage</span><span class="tag">commercial solar for logistics</span></div><p class="body" style="font-size:12.5px;color:var(--muted);margin:8px 0 0">The delivery-certainty lane. Often the cheapest, least-contested group.</p></div>
+      <div class="card tc"><div class="chhead"><span class="ctitle" style="font-size:15px">Product / long tail</span><span style="margin-left:auto"><span class="ichip hi">intent high</span><span class="ichip md">cost mixed</span></span></div><div class="tags"><span class="tag">ground mount solar commercial</span><span class="tag">commercial solar maintenance</span><span class="tag">rooftop solar 500kW</span></div></div>
+      <div class="card tt"><div class="chhead"><span class="ctitle" style="font-size:15px">Competitor conquest</span><span style="margin-left:auto"><span class="ichip hi">intent high</span><span class="ichip hi">cost high</span></span></div><div class="tags"><span class="tag">MyPower alternative</span><span class="tag">EvoEnergy alternative</span><span class="tag">[installer] reviews</span></div></div>
+      <div class="card tb"><div class="chhead"><span class="ctitle" style="font-size:15px">Comparison / solution-aware</span><span style="margin-left:auto"><span class="ichip md">intent medium</span><span class="ichip md">retarget</span></span></div><div class="tags"><span class="tag">commercial solar cost UK</span><span class="tag">commercial solar payback</span><span class="tag">is solar worth it for business</span></div><p class="body" style="font-size:12.5px;color:var(--muted);margin:8px 0 0">Research stage. Retarget these, do not expect them to convert first-click.</p></div>
+      <div class="card"><div class="chhead"><span class="ctitle" style="font-size:15px">Brand defense / content</span><span style="margin-left:auto"><span class="ichip md">intent mixed</span><span class="ichip lo">cost low</span></span></div><div class="tags"><span class="tag">Avonside Energy</span><span class="tag">content terms, retargeting only</span></div></div>
+    </div>
+    <div class="card tt" style="border-left:4px solid var(--hazard);margin-top:14px">
+      <div class="clabel" style="color:#b23410">Landing page decides the return</div>
+      <p class="body" style="margin:8px 0 0;font-size:13.5px">Because in-market clicks are this expensive, the page they land on decides the outcome, not the ad. A generic homepage wastes costly traffic. Each group needs a matched page: the warehouse searcher on a warehouse page, the cold-store searcher on a cold-storage page, the finance-intent searcher on a payback and finance page. One clear action, proof for the buyer's state of mind, a short fast form. Avonside's savings calculator is a strong matched asset here. This is exactly where a focused advertiser out-converts bigger spenders on the same click.</p>
+    </div>
+    <div class="grid2" style="margin-top:14px">
+      <div class="why"><b>Launch terms:</b> commercial solar installers, solar for business UK, solar for warehouses, commercial solar cost, industrial solar panels, solar for cold storage. Start on phrase and exact match.</div>
+      <div class="card" style="border-left:4px solid var(--hazard)"><div class="clabel" style="color:#b23410">Negative keywords, brand-collision first</div><ul class="clean" style="margin-top:8px;font-size:13px">
+        <li>Brand collision: the Avonside name also attaches to roofing and place names. Exclude roofing, jobs, careers, unrelated location terms.</li>
+        <li>Residential and domestic: home, house, domestic, residential.</li>
+        <li>Free and grant-only: free solar, grant only.</li>
+        <li>Product-only and do-it-yourself: kit, DIY, panels for sale, wholesale.</li>
+        <li>Jobs and training: jobs, course, training, apprenticeship.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h2 class="sec">Third-party fit <em>and intent signals</em></h2>
+    <p class="sub">The enrichment inputs that build the account-based list and sharpen cold. Five signals compose into one scored account view, joined by CRM data once the CRM is connected.</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 340" role="img" aria-label="Signals converging on one account view">
+          <g class="svglabel">
+            <rect x="10" y="20" width="230" height="34" rx="7" fill="none" stroke="var(--line)"/><text x="24" y="42">Intent &middot; Bombora</text>
+            <rect x="10" y="72" width="230" height="34" rx="7" fill="none" stroke="var(--line)"/><text x="24" y="94">Fit and firmographic &middot; Clay</text>
+            <rect x="10" y="124" width="230" height="34" rx="7" fill="none" stroke="var(--line)"/><text x="24" y="146">Website visitors &middot; Web ID</text>
+            <rect x="10" y="176" width="230" height="34" rx="7" fill="none" stroke="var(--line)"/><text x="24" y="198">Organic engagers &middot; Trigify</text>
+            <rect x="10" y="228" width="230" height="34" rx="7" fill="none" stroke="var(--line)"/><text x="24" y="250">Timing and hiring signals</text>
+            <path d="M240 37 C 380 37, 400 160, 520 160" fill="none" stroke="var(--muted)" stroke-width="1.3" marker-end="url(#a2)"/>
+            <path d="M240 89 C 380 89, 400 160, 520 160" fill="none" stroke="var(--muted)" stroke-width="1.3" marker-end="url(#a2)"/>
+            <path d="M240 141 C 400 141, 420 160, 520 160" fill="none" stroke="var(--muted)" stroke-width="1.3" marker-end="url(#a2)"/>
+            <path d="M240 193 C 380 193, 400 160, 520 160" fill="none" stroke="var(--muted)" stroke-width="1.3" marker-end="url(#a2)"/>
+            <path d="M240 245 C 380 245, 400 160, 520 160" fill="none" stroke="var(--muted)" stroke-width="1.3" marker-end="url(#a2)"/>
+            <rect x="525" y="120" width="200" height="80" rx="10" fill="#D4FF3D" opacity="0.14" stroke="#7BAA3E" stroke-width="1.5"/>
+            <text x="625" y="150" text-anchor="middle" fill="#5C7200" font-family="Archivo Black" font-size="12">One scored</text>
+            <text x="625" y="170" text-anchor="middle" fill="#5C7200" font-family="Archivo Black" font-size="12">account view</text>
+            <text x="625" y="190" text-anchor="middle" class="svgmuted">composed in DemandSense</text>
+            <line x1="725" y1="160" x2="770" y2="160" stroke="var(--muted)" stroke-width="1.3" marker-end="url(#a2)"/>
+            <rect x="775" y="128" width="115" height="64" rx="8" fill="none" stroke="var(--line)"/><text x="832" y="156" text-anchor="middle" font-size="10">Matched</text><text x="832" y="170" text-anchor="middle" font-size="10">Audience +</text><text x="832" y="184" text-anchor="middle" font-size="10">outreach</text>
+          </g>
+          <defs><marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--muted)"/></marker></defs>
+        </svg>
+      </div>
+      <figcaption>Five signals plus CRM compose into one scored account view. DemandSense and Website Visitor Identification are Impactable's own software.</figcaption>
+    </figure>
+    <div class="grid3" style="margin-top:14px">
+      <div class="card"><div class="clabel" style="color:var(--blue-text)">Intent</div><p class="body" style="font-size:13px;margin:6px 0 0">Accounts researching commercial solar and energy management now. Source: Bombora.</p></div>
+      <div class="card"><div class="clabel" style="color:var(--blue-text)">Fit / firmographic</div><p class="body" style="font-size:13px;margin:6px 0 0">Energy-intensive profile, multi-site footprint, roof-area or consumption proxy. Source: Clay.</p></div>
+      <div class="card"><div class="clabel" style="color:var(--blue-text)">Website visitors</div><p class="body" style="font-size:13px;margin:6px 0 0">The named companies and people already on the site. Source: Website Visitor Identification.</p></div>
+      <div class="card"><div class="clabel" style="color:var(--blue-text)">Organic engagement</div><p class="body" style="font-size:13px;margin:6px 0 0">People engaging with Avonside's solar and net-zero content. Source: Trigify.</p></div>
+      <div class="card"><div class="clabel" style="color:var(--blue-text)">Timing / hiring</div><p class="body" style="font-size:13px;margin:6px 0 0">Energy or facilities roles being hired, new-site signals, contract-renewal timing.</p></div>
+      <div class="card"><div class="clabel" style="color:var(--blue-text)">CRM, once connected</div><p class="body" style="font-size:13px;margin:6px 0 0">Deal and account history matched to advertising exposure. Source: HubSpot or Salesforce.</p></div>
+    </div>
+    <div class="why"><b>Enrichment workflow:</b> build the list in Clay, compose the signals through DemandSense into one scored account view, upload as a LinkedIn Matched Audience, and hand the top scored accounts to LinkedIn and email outreach.</div>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">Sizing and method</h3>
+    <div class="grid3">
+      <div class="card"><div class="clabel" style="color:var(--moss-text)">Observed</div><p class="body" style="font-size:13px;margin:6px 0 0">Tracking state, the market and competitor structure, and the priority position from the white space analysis.</p></div>
+      <div class="card"><div class="clabel" style="color:var(--clay-text)">Inferred</div><p class="body" style="font-size:13px;margin:6px 0 0">All audience sizes are directional until sized in Campaign Manager. Search costs are category-level reads until a keyword pull is run.</p></div>
+      <div class="card"><div class="clabel" style="color:var(--blue-text)">Confirm at build</div><p class="body" style="font-size:13px;margin:6px 0 0">Segment sizes in-platform, keyword volume and the brand versus non-brand split, and warm-pool sizes once the Insight Tag has been live a few weeks.</p></div>
+    </div>
+  </section>
+</section>
+
+<section class="view" id="ecosystem">
+  <section class="blk">
+    <div class="secnum">ECOSYSTEM &nbsp;&middot;&nbsp; THE GROWTH SYSTEM BOARD</div>
+    <h2 class="sec">The growth system, <em>and where we start</em></h2>
+    <p class="sub">Avonside's full demand system across five pillars, read forward. This is sequence, not audit: what we would stand up first, what gets built during the engagement, and what is sequenced for later. The start set is derived from the recommended option, so this board doubles as the answer to where our engagement begins.</p>
+    <div class="legend">
+      <span><span class="badge bstart">Start</span> stood up first</span>
+      <span><span class="badge bbuild">Build</span> during the engagement</span>
+      <span><span class="badge blater">Later</span> sequenced once earlier layers prove out</span>
+      <span><span class="owner">IMP</span> Impactable runs it &nbsp; <span class="owner">Avonside</span> client owns or co-owns</span>
+    </div>
+    <div class="board">
+      <div class="pillrow create">
+        <div class="plabel"><div class="pn">Create</div><div class="pj">Make demand exist before anyone is in-market</div></div>
+        <div class="pmotions">
+          <div class="mchip"><div class="mid">C1</div><div class="mname">Content and search foundation</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">Avonside + IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C2</div><div class="mname">Subject-matter thought leadership</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C3</div><div class="mname">Organic distribution depth</div><div class="mmeta"><span class="badge blater">Later</span><span class="owner">IMP</span><span class="phase"><i></i><i></i><i class="on"></i></span></div></div>
+          <div class="mchip"><div class="mid">C4</div><div class="mname">Thought Leader amplification</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+        </div>
+      </div>
+      <div class="pillrow capture">
+        <div class="plabel"><div class="pn">Capture</div><div class="pj">Catch the buyers actively searching</div></div>
+        <div class="pmotions">
+          <div class="mchip"><div class="mid">C5</div><div class="mname">Brand defense search</div><div class="mmeta"><span class="badge bstart">Start</span><span class="owner">IMP</span><span class="phase"><i class="on"></i><i></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C6</div><div class="mname">Core and solution paid search</div><div class="mmeta"><span class="badge bstart">Start</span><span class="owner">IMP</span><span class="phase"><i class="on"></i><i></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C7</div><div class="mname">Competitor conquest search</div><div class="mmeta"><span class="badge bstart">Start</span><span class="owner">IMP</span><span class="phase"><i class="on"></i><i></i><i></i></span></div></div>
+        </div>
+      </div>
+      <div class="pillrow connect">
+        <div class="plabel"><div class="pn">Connect</div><div class="pj">Turn anonymous attention into named, scored accounts</div></div>
+        <div class="pmotions">
+          <div class="mchip"><div class="mid">C11</div><div class="mname">Conversion tracking (Insight Tag, CAPI)</div><div class="mmeta"><span class="badge bstart">Start</span><span class="owner">Avonside + IMP</span><span class="phase"><i class="on"></i><i></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C12</div><div class="mname">Website Visitor Identification</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C13</div><div class="mname">Account intelligence and CRM sync</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C14</div><div class="mname">Enrichment and owned audiences</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+        </div>
+      </div>
+      <div class="pillrow convert">
+        <div class="plabel"><div class="pn">Convert</div><div class="pj">Turn warm accounts into conversations and pipeline</div></div>
+        <div class="pmotions">
+          <div class="mchip"><div class="mid">C8</div><div class="mname">LinkedIn retargeting (qualify)</div><div class="mmeta"><span class="badge bstart">Start</span><span class="owner">IMP</span><span class="phase"><i class="on"></i><i></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C18</div><div class="mname">Landing pages and conversion rate optimization</div><div class="mmeta"><span class="badge bstart">Start</span><span class="owner">Avonside + IMP</span><span class="phase"><i class="on"></i><i></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C9</div><div class="mname">LinkedIn cold and account-based</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C10</div><div class="mname">Bottom-of-funnel conversion</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C19</div><div class="mname">Offer architecture</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C20</div><div class="mname">Sales activation loop</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">Avonside + IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C17</div><div class="mname">Email and outreach activation</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C15</div><div class="mname">Meta reach against the qualified pool</div><div class="mmeta"><span class="badge blater">Later</span><span class="owner">IMP</span><span class="phase"><i></i><i></i><i class="on"></i></span></div></div>
+          <div class="mchip"><div class="mid">C16</div><div class="mname">Programmatic air cover</div><div class="mmeta"><span class="badge blater">Later</span><span class="owner">IMP</span><span class="phase"><i></i><i></i><i class="on"></i></span></div></div>
+        </div>
+      </div>
+      <div class="pillrow compound">
+        <div class="plabel"><div class="pn">Compound</div><div class="pj">Measure, diagnose, reallocate; sharper every quarter</div></div>
+        <div class="pmotions">
+          <div class="mchip"><div class="mid">C21</div><div class="mname">Diagnostics and review cadence</div><div class="mmeta"><span class="badge bbuild">Build</span><span class="owner">IMP</span><span class="phase"><i></i><i class="on"></i><i></i></span></div></div>
+          <div class="mchip"><div class="mid">C22</div><div class="mname">Experimentation program</div><div class="mmeta"><span class="badge blater">Later</span><span class="owner">IMP</span><span class="phase"><i></i><i></i><i class="on"></i></span></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="body" style="font-size:13px;color:var(--muted)">The start set, capture plus the qualification hub, tracking and matched landing pages, is where the engagement begins. The content engine and the account-based motion build on top of it, and reach layers are sequenced once the qualified pool exists. Phase dots mark when a motion enters the sequence, not a grade.</p>
+  </section>
+</section>
+
+<section class="view" id="howitworks">
+  <section class="blk">
+    <div class="secnum">HOW IT WORKS &nbsp;&middot;&nbsp; ONE SYSTEM, AN ORDER</div>
+    <h2 class="sec">How we would run it</h2>
+    <p class="sub">Every channel has one job in this account, and the order is what makes each layer cheaper than the last. LinkedIn is the hub because it is the only channel that filters site traffic firmographically before spend.</p>
+
+    <div class="card tl">
+      <div class="chhead"><span class="clabel" style="color:var(--canopy-text)">CREATE</span><span class="ctitle">Make demand exist</span><span class="ctags">content engine &middot; Thought Leader Ads</span></div>
+      <p class="body" style="margin-top:2px">Subject-matter interviews published from the company page as posts, a newsletter and a blog, then amplified with Thought Leader Ads. This runs even without a personal-brand founder, and it is the fix for a thin organic footprint. The cheapest reach in the system, and the demand this category has to create rather than harvest.</p>
+      <div class="why"><b>Job in this account:</b> create demand among energy-intensive buyers not yet searching, build organic and AI-search visibility, and feed the retargeting funnel.</div>
+    </div>
+    <div class="card tb">
+      <div class="chhead"><span class="clabel" style="color:var(--blue-text)">CONNECT</span><span class="ctitle">Qualify and convert</span><span class="ctags">LinkedIn &middot; the hub</span></div>
+      <p class="body" style="margin-top:2px">LinkedIn qualifies the site and search traffic firmographically, by company size, industry, title and seniority, before any further spend, runs fit-and-signal account-based marketing on named multi-site accounts, and retargets. It reads signal off every other channel and surfaces the accounts worth a conversation.</p>
+      <div class="why"><b>Job in this account:</b> filter the traffic the other channels pay for, qualify the estate and finance buyers, and route the named accounts to outreach.</div>
+    </div>
+    <div class="card tt">
+      <div class="chhead"><span class="clabel" style="color:var(--terra-text)">CAPTURE</span><span class="ctitle">Harvest who is looking</span><span class="ctags">Google paid search</span></div>
+      <p class="body" style="margin-top:2px">Google captures in-market commercial-solar searchers, defends the Avonside brand, and runs competitor conquest. Because there are no warm pools yet and buyers are already searching, this is the day-one lead lane here, not merely a capture layer, and it fills the retargeting pools everything else runs on.</p>
+      <div class="why"><b>Job in this account:</b> harvest the in-market demand that already exists, route it to matched landing pages, and seed the pools.</div>
+    </div>
+    <div class="card tc">
+      <div class="chhead"><span class="clabel" style="color:var(--clay-text)">EXTEND</span><span class="ctitle">Scale the qualified pool</span><span class="ctags">Meta &middot; programmatic</span></div>
+      <p class="body" style="margin-top:2px">Meta reaches the enriched buyers LinkedIn prices out, at a fraction of the cost per thousand impressions, and programmatic provides account-based air cover across display and native where LinkedIn delivery is thin. These inherit a qualified pool. They cannot create one, so they run after LinkedIn has qualified the audience.</p>
+      <div class="why"><b>Job in this account:</b> extend reach against accounts LinkedIn has already qualified, and cover the underserved accounts the hub cannot reach alone.</div>
+    </div>
+    <div class="card tm">
+      <div class="chhead"><span class="clabel" style="color:var(--moss-text)">ACTIVATE</span><span class="ctitle">Turn signal into conversations</span><span class="ctags">outreach &middot; email</span></div>
+      <p class="body" style="margin-top:2px">Signal-triggered LinkedIn connects and email nurture on the accounts already leaning in, then a clean hand to Avonside's business development team. The signal layer decides who is ready, so outreach lands on accounts that are warm rather than cold.</p>
+      <div class="why"><b>Job in this account:</b> convert the named accounts the signal layer surfaces, including the hidden pipeline nobody had logged.</div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">The signal layer <em>underneath all of it</em></h3>
+    <p class="body">Most agencies rent a dashboard. We run on DemandSense, which composes five signal sources into one account-level view: customer data, LinkedIn paid, LinkedIn organic, the companies on the site and the people on the site. Website Visitor Identification de-anonymizes both. What it produces is the reporting a board actually asks for, not clicks.</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 250" role="img" aria-label="Coverage waterfall">
+          <g class="svglabel">
+            <text x="0" y="30">Addressable universe</text><rect x="250" y="18" width="600" height="20" rx="4" style="fill:var(--barblue)"/>
+            <text x="0" y="76">Aware (served impressions)</text><rect x="250" y="64" width="470" height="20" rx="4" style="fill:var(--barblue)"/>
+            <text x="0" y="122">Engaged (clicked or visited)</text><rect x="250" y="110" width="300" height="20" rx="4" style="fill:var(--barcanopy)"/>
+            <text x="0" y="168">Active pipeline (multi-touch)</text><rect x="250" y="156" width="160" height="20" rx="4" style="fill:var(--barmoss)"/>
+            <text x="0" y="214">Closed-won</text><rect x="250" y="202" width="70" height="20" rx="4" style="fill:var(--barmoss)"/>
+          </g>
+        </svg>
+      </div>
+      <figcaption>The coverage waterfall, illustrative shape, not Avonside data. Multi-touch accounts convert to pipeline at roughly three times the rate of single-touch, which is why the job is to move accounts down the waterfall, not just buy clicks.</figcaption>
+    </figure>
+    <div class="grid3" style="margin-top:6px">
+      <div class="card"><div class="clabel" style="color:var(--blue-text)">Account exposure map</div><p class="body" style="font-size:13px;margin:6px 0 0">Which target accounts are being served and engaging, and which are underserved. The underserved move to Meta, programmatic or outbound.</p></div>
+      <div class="card"><div class="clabel" style="color:var(--blue-text)">Hidden pipeline</div><p class="body" style="font-size:13px;margin:6px 0 0">Accounts with heavy engagement and no deal record, surfaced automatically and handed to sales. Often the most useful list in the system.</p></div>
+      <div class="card"><div class="clabel" style="color:var(--blue-text)">Segment verdicts and waste map</div><p class="body" style="font-size:13px;margin:6px 0 0">Invest, hold, reduce or exclude by seniority, function, industry and size, with the segments absorbing impressions and no clicks flagged for suppression.</p></div>
+    </div>
+    <div class="note" style="margin-top:12px">DemandSense and Website Visitor Identification are Impactable's own software. We say so because the room leans on them.</div>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">Measurement, <em>once your CRM is connected</em></h3>
+    <p class="body">Campaign Manager reports impressions and clicks and has no visibility into a CRM, so it structurally cannot answer whether LinkedIn produced deals. Connecting a customer relationship management system once lets deal and account data match to the accounts that saw or engaged with the ads, which turns clicks into influenced pipeline. Avonside does not run a CRM today, so this is a sequenced step, not a promise made in advance. Here is what it looks like when it is connected.</p>
+    <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/7Pqs4jgyZA4" title="DemandSense influenced revenue walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <table class="tbl"><thead><tr><th>Layer</th><th>What we report</th></tr></thead><tbody>
+      <tr><td class="k">Capture (Google)</td><td>Search impression share on target terms, cost per qualified lead, and matched-page conversion.</td></tr>
+      <tr><td class="k">Connect (LinkedIn)</td><td>Account reach and engagement, cost per qualified lead by segment, and retargeting conversion.</td></tr>
+      <tr><td class="k">Create (content)</td><td>Reach, engaged accounts, and content-influenced pipeline as the engine matures.</td></tr>
+      <tr><td class="k">Signals</td><td>The coverage waterfall and the account exposure map, account by account.</td></tr>
+    </tbody></table>
+    <div class="why"><b>What we will not promise:</b> full econometric marketing-mix modelling, which is a specialist discipline. What we do promise is honest attribution: verify conversion capture, add offline conversions so revenue attaches, and run capture where last-click is defensible. And on a long cycle, the first sixty days are read on account penetration, persona reach and repeat engagement, the leading indicators that show pipeline forming, not booked calls alone.</div>
+  </section>
+</section>
+
+<section class="view" id="paths">
+  <section class="blk">
+    <div class="secnum">PATHS FORWARD &nbsp;&middot;&nbsp; WHERE WE FIT, AND WHERE TO START</div>
+    <h2 class="sec">Where we fit, <em>and the way to start</em></h2>
+    <div class="grid2">
+      <div class="card tl">
+        <h4 style="font-size:15px;margin:0 0 4px">Where we fit well</h4>
+        <ul class="clean" style="margin-top:6px">
+          <li>Real in-market search already exists, so capture works from day one.</li>
+          <li>Strong, quantified proof that converts once the traffic is qualified.</li>
+          <li>A thin organic footprint, which is exactly what the content engine is built to fix.</li>
+          <li>Named multi-site accounts, so the account-based motion has real targets.</li>
+          <li>A private-equity growth mandate that wants a repeatable, measurable engine.</li>
+        </ul>
+      </div>
+      <div class="card tb">
+        <h4 style="font-size:15px;margin:0 0 4px">Why we recommend this starting point</h4>
+        <p class="body" style="font-size:13.5px;margin:6px 0 0">Aim small. We start with one motion, capture the demand already searching and qualify it on LinkedIn, then add the content foundation this category needs, and earn the full account-based and air-cover system once the first layers prove out. The proof is strong enough that the first job is distribution, not persuasion, so we put the proof in front of the right buyers and let the numbers earn the next layer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h2 class="sec">Three ways to start, <em>built from the motion</em></h2>
+    <p class="sub">Scoped to Avonside from the recommended motion. These are proposed starting points; exact fees and scope are confirmed on the call. Management fee is always separate from ad spend, setup is a one-time 1,500 dollars, and we work on a 90-day discovery horizon so the system has room to prove out.</p>
+    <div class="scroll">
+    <table class="pm" style="min-width:820px">
+      <tr>
+        <td class="rowlbl"></td>
+        <td><div class="ohead">Capture and Qualify</div><div class="price">from $4,500<span class="per"> /mo</span></div><div class="per">approx &middot; two channels, up to ~$25k spend</div></td>
+        <td class="rec"><span class="recpill">Recommended for Avonside</span><div class="ohead">Capture, Qualify and Create</div><div class="price">from $5,000<span class="per"> /mo</span></div><div class="per">approx &middot; adds the content engine</div></td>
+        <td class="rectint"><div class="ohead">The Full System</div><div class="price">$6,000 to $12,000<span class="per"> /mo</span></div><div class="per">approx &middot; multi-channel, board-grade</div></td>
+      </tr>
+      <tr>
+        <td class="rowlbl">The motion</td>
+        <td>Google captures the demand already searching; LinkedIn qualifies that traffic and retargets it. The day-one lead lane while warm pools fill.</td>
+        <td class="rec">Everything in Capture and Qualify, plus a content engine that creates the demand not yet searching and de-anonymizes the traffic. The foundation this category needs.</td>
+        <td class="rectint">Everything in Create, plus a named-account motion, selective LinkedIn cold, and Meta and programmatic air cover, measured to influenced revenue.</td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Channels</td>
+        <td><span class="ck">Google</span> &middot; <span class="ck">LinkedIn retargeting</span> &middot; <span class="cx">content</span></td>
+        <td class="rec"><span class="ck">Google</span> &middot; <span class="ck">LinkedIn retargeting</span> &middot; <span class="ck">content engine</span></td>
+        <td class="rectint"><span class="ck">Google</span> &middot; <span class="ck">LinkedIn cold + retargeting</span> &middot; <span class="ck">content</span> &middot; <span class="ck">Meta + programmatic</span></td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Content and deliverables</td>
+        <td><span class="cx">Not in this tier</span></td>
+        <td class="rec"><span class="ck">Monthly interview into video, clips, posts, newsletter</span></td>
+        <td class="rectint"><span class="ck">Full content engine, plus offer and landing-page work</span></td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Signals and intelligence</td>
+        <td>DemandSense five-source signals</td>
+        <td class="rec">DemandSense five-source signals, plus <span class="ck">Website Visitor Identification</span></td>
+        <td class="rectint">Full signal stack, Web ID, enrichment, plus <span class="ck">CRM sync and conversions back to LinkedIn</span></td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Team</td>
+        <td>Strategist plus execution pod</td>
+        <td class="rec">Strategist plus execution pod, wired as one motion</td>
+        <td class="rectint">Dedicated senior strategist and a full pod, not a shared queue</td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Reporting</td>
+        <td>Quarterly diagnostic Impact Report</td>
+        <td class="rec">Quarterly Impact Report, cross-channel</td>
+        <td class="rectint">Quarterly executive review, board-grade, anchored in real deals</td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Why it fits Avonside</td>
+        <td>Leads on day one from the search already happening. Demand creation stays limited to what is searching until the engine is added.</td>
+        <td class="rec">Adds the content foundation a thin-organic, considered-purchase category needs, so demand grows beyond what is searching and the system compounds.</td>
+        <td class="rectint">Maximum traction and the board-grade attribution a private-equity-backed platform will want once the first layers prove out.</td>
+      </tr>
+      <tr>
+        <td class="rowlbl"></td>
+        <td><a class="btn ghost" href="https://landbot.online/v3/H-2201411-ZNNL8EM9RF7C2XAC/index.html" target="_blank" rel="noopener">Talk to us</a></td>
+        <td class="rec"><a class="btn primary" href="https://landbot.online/v3/H-2201411-ZNNL8EM9RF7C2XAC/index.html" target="_blank" rel="noopener">Start here</a></td>
+        <td class="rectint"><a class="btn ghost" href="https://landbot.online/v3/H-2201411-ZNNL8EM9RF7C2XAC/index.html" target="_blank" rel="noopener">Talk to us</a></td>
+      </tr>
+    </table>
+    </div>
+    <div class="freebar">The Demand Plan work, this room and its analysis, is our own read on your situation. It is yours to keep, and it stays free.</div>
+  </section>
+
+  <section class="blk">
+    <h3 class="sub">Proof that matches <em>this situation</em></h3>
+    <div class="grid3">
+      <div class="card tl"><div class="clabel" style="color:var(--canopy-text)">COLD START</div><h4 style="font-size:14px;margin:6px 0 4px">Life Sciences</h4><p class="body" style="font-size:13px;margin:0">Zero paid history to 32 conversions in 90 days. <b>Why this one:</b> the closest match to your starting point, a clean build from the tracking up, producing conversions inside a single quarter.</p></div>
+      <div class="card tt"><div class="clabel" style="color:var(--terra-text)">TRACKING + CAPTURE</div><h4 style="font-size:14px;margin:6px 0 4px">Octopus and Codefresh</h4><p class="body" style="font-size:13px;margin:0">138,000 dollars of spend to 1.38 million of pipeline, ten to one, with a cross-domain tracking rebuild, Google-led. <b>Why this one:</b> the same first move we would make here, running distinct motions cleanly under one roof.</p></div>
+      <div class="card tb"><div class="clabel" style="color:var(--blue-text)">EFFICIENCY AT SCALE</div><h4 style="font-size:14px;margin:6px 0 4px">Kong</h4><p class="body" style="font-size:13px;margin:0">Cost per lead from about 1,000 dollars to 111, 663,000 dollars of pipeline, multi-region. <b>Why this one:</b> efficiency-at-scale proof for a growth-mandated platform, brought down by sequencing rather than more spend.</p></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="ctablock dark-panel">
+      <div class="recpill">The recommendation</div>
+      <h2 class="sec" style="color:#F4F1EA;margin-top:8px">Start with <em>Capture, Qualify and Create.</em></h2>
+      <p class="body" style="color:rgba(216,212,200,.85);max-width:680px;margin:12px auto 0">It stands up the qualification hub, captures the demand already searching, and builds the content foundation this situation needs, then earns the full account-based and air-cover system once the first layers prove out. One call scopes the exact figures and the first ninety days.</p>
+      <div class="btnrow" style="justify-content:center;margin-top:22px">
+        <a class="btn primary" href="https://landbot.online/v3/H-2201411-ZNNL8EM9RF7C2XAC/index.html" target="_blank" rel="noopener">Book a strategy call</a>
+        <a class="btn ghost" href="https://impactable.com/competitor-intel-report" target="_blank" rel="noopener">Or start with the free Demand Plan</a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<footer class="foot">
+  <p class="note">Built from public sources with no account access. Estimates are indicative, not forecasts. Unknowns are flagged rather than filled in, and DemandSense and Website Visitor Identification are our own software.</p>
+  <details><summary><span class="chip">+</span><span class="verb">Show </span>full notes and limitations</summary>
+    <div class="dbody">
+      <p class="body" style="font-size:13px">Audience sizes and search costs are directional until sized in Campaign Manager and pulled from the keyword tool. Competitor paid presence needs a manual advertiser-scoped check; the automated method returned no usable data. Pricing is anchored to the live published ladder, marked approximate, and confirmed on the call; the management fee is always separate from ad spend. Nothing here rests on a measured figure that has not been pulled.</p>
+    </div>
+  </details>
+</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, tbtn=document.getElementById('themeBtn');
+  var saved=null; try{saved=localStorage.getItem('imp_theme');}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  function icon(){tbtn.textContent = root.getAttribute('data-theme')==='light' ? '\u2600' : '\u263e';}
+  icon();
+  tbtn.addEventListener('click',function(){
+    var t=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',t);
+    try{localStorage.setItem('imp_theme',t);}catch(e){}
+    icon();
+  });
+  var views=['overview','whitespace','targeting','ecosystem','howitworks','paths'];
+  function show(v){
+    if(views.indexOf(v)===-1){v='overview';}
+    document.querySelectorAll('.view').forEach(function(s){s.classList.toggle('active',s.id===v);});
+    document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('active',t.dataset.v===v);});
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){var v=t.dataset.v;show(v);history.replaceState(null,'','#'+v);});});
+  document.querySelectorAll('[data-goto]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var v=a.dataset.goto;show(v);history.replaceState(null,'','#'+v);});});
+  window.addEventListener('hashchange',function(){show((location.hash||'#overview').slice(1));});
+  var initial=(location.hash||'#overview').slice(1); if(initial!=='overview'){show(initial);}
+})();
+</script>
+</body>
+</html>
